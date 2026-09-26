@@ -1,0 +1,311 @@
+@import 'tailwindcss';
+
+/* ─── CSS Custom Properties ─── */
+:root {
+  --bg-base: #070510;
+  --bg-card: rgba(255, 255, 255, 0.04);
+  --bg-glass: rgba(255, 255, 255, 0.06);
+  --color-gold: #c9a96e;
+  --color-pink: #e91e8c;
+  --color-pink-light: #ff6bb5;
+  --color-purple: #7c3aed;
+  --color-purple-light: #a78bfa;
+  --color-cream: #f5e6d3;
+  --color-text: #f8f0ff;
+  --color-muted: rgba(248, 240, 255, 0.6);
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-handwriting: 'Dancing Script', cursive;
+  --gradient-primary: linear-gradient(135deg, #e91e8c 0%, #7c3aed 50%, #070510 100%);
+  --gradient-card: linear-gradient(135deg, rgba(233, 30, 140, 0.15) 0%, rgba(124, 58, 237, 0.15) 100%);
+  --shadow-glow-pink: 0 0 40px rgba(233, 30, 140, 0.3);
+  --shadow-glow-purple: 0 0 40px rgba(124, 58, 237, 0.3);
+  --shadow-glow-gold: 0 0 30px rgba(201, 169, 110, 0.4);
+}
+
+/* ─── Base Reset ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.7;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+@media (max-width: 768px) {
+  body {
+    cursor: auto;
+  }
+}
+
+/* ─── Grain Texture Overlay ─── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+}
+
+/* ─── Animated Background ─── */
+.bg-animated {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: var(--bg-base);
+  overflow: hidden;
+}
+
+.bg-animated::after {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: radial-gradient(ellipse at 20% 50%, rgba(233, 30, 140, 0.06) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 20%, rgba(124, 58, 237, 0.08) 0%, transparent 50%),
+              radial-gradient(ellipse at 50% 80%, rgba(201, 169, 110, 0.04) 0%, transparent 50%);
+  animation: bgShift 20s ease-in-out infinite alternate;
+}
+
+@keyframes bgShift {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-2%, 2%) scale(1.02); }
+  66% { transform: translate(2%, -1%) scale(0.99); }
+  100% { transform: translate(-1%, 1%) scale(1.01); }
+}
+
+/* ─── Typography ─── */
+.font-serif { font-family: var(--font-serif); }
+.font-handwriting { font-family: var(--font-handwriting); }
+
+h1, h2, h3 {
+  font-family: var(--font-serif);
+  line-height: 1.2;
+}
+
+/* ─── Glass Card ─── */
+.glass {
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-dark {
+  background: rgba(7, 5, 16, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ─── Glow Effects ─── */
+.glow-pink {
+  box-shadow: var(--shadow-glow-pink);
+}
+.glow-purple {
+  box-shadow: var(--shadow-glow-purple);
+}
+.glow-gold {
+  box-shadow: var(--shadow-glow-gold);
+}
+
+.text-glow-pink {
+  text-shadow: 0 0 30px rgba(233, 30, 140, 0.8), 0 0 60px rgba(233, 30, 140, 0.4);
+}
+.text-glow-gold {
+  text-shadow: 0 0 20px rgba(201, 169, 110, 0.8), 0 0 40px rgba(201, 169, 110, 0.4);
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-pink);
+  border-radius: 2px;
+}
+
+/* ─── Image Placeholder ─── */
+.img-placeholder {
+  background: linear-gradient(135deg, rgba(233, 30, 140, 0.2) 0%, rgba(124, 58, 237, 0.2) 50%, rgba(201, 169, 110, 0.1) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.3);
+  font-size: 2rem;
+}
+
+/* ─── Ticker Animation ─── */
+@keyframes ticker {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.ticker-animate {
+  animation: ticker 25s linear infinite;
+  white-space: nowrap;
+}
+
+/* ─── Polaroid ─── */
+.polaroid {
+  background: white;
+  padding: 12px 12px 40px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5), 0 2px 8px rgba(0,0,0,0.3);
+}
+
+/* ─── Flip Card ─── */
+.flip-card-inner {
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform-style: preserve-3d;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.flip-card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+/* ─── Timeline ─── */
+.timeline-line {
+  background: linear-gradient(to bottom, transparent, var(--color-pink), var(--color-purple), transparent);
+}
+
+/* ─── Wax Seal ─── */
+.wax-seal {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #dc2626, #991b1b);
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.5), inset 0 1px 3px rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.9);
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+/* ─── Newspaper ─── */
+.newspaper-card {
+  background: #f5f0e8;
+  color: #1a1a1a;
+  font-family: 'Times New Roman', Times, serif;
+  border: 2px solid #c8b99a;
+  box-shadow: 4px 4px 20px rgba(0,0,0,0.4), inset 0 0 60px rgba(200,185,154,0.1);
+}
+
+/* ─── Utility: Section ─── */
+.section-full {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ─── Pulse Animation ─── */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(233, 30, 140, 0.4), 0 0 40px rgba(233, 30, 140, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(233, 30, 140, 0.8), 0 0 80px rgba(233, 30, 140, 0.4), 0 0 120px rgba(233, 30, 140, 0.2);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}
+
+/* ─── Confetti ─── */
+@keyframes confettiFall {
+  0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+.confetti-piece {
+  animation: confettiFall linear forwards;
+}
+
+/* ─── Shake ─── */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10% { transform: translateX(-10px) rotate(-2deg); }
+  20% { transform: translateX(10px) rotate(2deg); }
+  30% { transform: translateX(-8px) rotate(-1deg); }
+  40% { transform: translateX(8px) rotate(1deg); }
+  50% { transform: translateX(-4px); }
+  60% { transform: translateX(4px); }
+  70% { transform: translateX(-2px); }
+  80% { transform: translateX(2px); }
+}
+
+.shake {
+  animation: shake 0.8s ease-in-out;
+}
+
+/* ─── Sparkle ─── */
+@keyframes sparkleFade {
+  0% { opacity: 1; transform: scale(0) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1.2) rotate(180deg); }
+  100% { opacity: 0; transform: scale(0) rotate(360deg); }
+}
+
+.sparkle {
+  animation: sparkleFade 1.5s ease-out forwards;
+}
+
+/* ─── Typewriter Cursor ─── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.2em;
+  background: var(--color-gold);
+  margin-left: 4px;
+  vertical-align: middle;
+  animation: blink 1s step-end infinite;
+}
