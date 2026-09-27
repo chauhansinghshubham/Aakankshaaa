@@ -73,9 +73,9 @@ export default function FinalPage({ onReplay }) {
 
         {/* The Knowing Truth */}
         <motion.p
-          className="text-lg sm:text-2xl font-light"
+          className="text-base sm:text-xl font-light leading-relaxed max-w-xl mx-auto"
           style={{
-            color: 'rgba(255,255,255,0.95)',
+            color: 'rgba(255,255,255,0.92)',
             fontFamily: 'var(--font-sans)',
             letterSpacing: '0.01em',
           }}
@@ -84,10 +84,10 @@ export default function FinalPage({ onReplay }) {
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          I know that you also want to talk to me...
+          I know you're upset with me and trying to show that you don't want to talk to me anymore... but as far as I know you, Aakanksha, there is still a corner in your heart that doesn't completely agree with this decision.
           <br />
-          <span style={{ color: 'var(--color-pink-light)', fontStyle: 'italic', fontWeight: 400 }}>
-            you're just not showing it.
+          <span style={{ color: 'var(--color-pink-light)', fontStyle: 'italic', fontWeight: 400 }} className="inline-block mt-2">
+            You're just not showing it.
           </span>
         </motion.p>
 
