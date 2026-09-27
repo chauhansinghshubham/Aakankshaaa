@@ -166,13 +166,13 @@ const content = {
   ],
 
   apologyLines: [
-    "I know I hurt you, and I know I broke your trust.",
-    "Making up that stupid lie just to see how you would react was childish and wrong.",
-    "And letting it go on for 15 days before telling you the truth made it so much worse.",
-    "I understand why you stopped talking to me, and why you doubted what kind of guy I am.",
-    "I am not making this website to force you to forgive me or rush you.",
-    "I just wanted you to know the absolute truth: there was never anyone else.",
-    "You are the only person who matters to me. And I am genuinely, deeply sorry.",
+    "I know I've hurt you.",
+    "I know things between us haven't felt the way they should.",
+    "And I'm not making this website to force you to forgive me.",
+    "I just wanted to say that I'm genuinely sorry.",
+    "You matter to me.",
+    "What we had matters to me.",
+    "And despite everything, I still care about you deeply.",
   ],
 
   letter: `Dear Aakanksha,
