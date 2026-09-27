@@ -200,7 +200,7 @@ With all my heart,
 Shubham`,
 
   finalMessage:
-    `There were never 5 other girls. There was only ever you. I made a foolish mistake to test your feelings, and I am truly sorry for breaking your trust. Take all the time you need — whenever you're ready to talk, I'm right here. 🤍`,
+    `I don't know what I feel for you or if I even have feelings for you or not, but I literally miss us. The thing without any tag that was between us will always be my core memory. And honestly... I just really don't want this to be where we end. 🤍`,
 };
 
 export default content;

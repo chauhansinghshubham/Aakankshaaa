@@ -80,6 +80,14 @@ export default function FinalPage({ onReplay }) {
             I just miss us. The late calls, you taking off your glasses even when you complained your eyes look small, getting soaked in the rain without an umbrella, and that line you once told me — <span className="text-gold font-normal italic" style={{ color: 'var(--color-gold)' }}>"Agar aap baat nahi karenge, toh hum ghar aa jayenge aapke."</span>
           </p>
 
+          <p className="text-white/80">
+            I don't know what I feel for you or if I even have feelings for you or not, but I literally miss us. The thing without any tag that was between us will always be my core memory.
+          </p>
+
+          <p className="text-white/90">
+            And honestly... I just really don't want this to be where we end.
+          </p>
+
           <p className="text-sm sm:text-base text-white/60 pt-2">
             No pressure at all. Whenever you feel like talking, I'm right here.
           </p>
