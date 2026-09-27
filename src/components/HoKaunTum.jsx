@@ -4,8 +4,8 @@ import ParticleSystem from './ParticleSystem';
 import content from '../config/content';
 
 const TYPING_LINES = [
-  'Ek ladki...',
-  'jo pata nahi kab itni important ho gayi.',
+  'Agar tum mujhse pucho...',
+  'ki mere liye kaun ho tum?',
 ];
 
 function useTypingSequence(lines, started) {
@@ -167,17 +167,17 @@ export default function HoKaunTum() {
           transition={{ duration: 1, delay: 1.2 }}
         >
           <p className="text-sm sm:text-base leading-relaxed text-white/80 font-sans font-light">
-            I said those words to you when I was angry, and I answered you in a way you never deserved. But those words made me think... If you really asked me that question today: <span className="text-white font-medium italic">Who are you to me?</span>
+            If you ever wonder who you are to me, or whether you were just one of many: <span className="text-white font-medium italic">There was never anyone else.</span>
           </p>
           <div className="mt-4 pt-4 border-t border-white/10 space-y-2 text-xs sm:text-sm text-pink-200/90 font-sans">
-            <p>✦ The person whose messages I look forward to.</p>
-            <p>✦ The person whose silence I notice.</p>
-            <p>✦ The person I can argue with and still miss.</p>
-            <p>✦ The person who can make me ridiculously happy with the smallest things.</p>
-            <p>✦ The person who somehow became a part of my everyday life.</p>
+            <p>✦ The only person whose messages I wait for.</p>
+            <p>✦ The only person whose silence breaks my whole day.</p>
+            <p>✦ The only person I want to talk to, even after a disagreement.</p>
+            <p>✦ The person who can make me smile with the smallest, most random things.</p>
+            <p>✦ The person who quietly became my favourite part of everyday life.</p>
           </div>
           <p className="mt-4 text-xs sm:text-sm text-white/90 italic font-sans border-l-2 border-pink-500 pl-3">
-            So no, Aakanksha... you are not "nothing" to me. You are someone who means a lot more to me than I have sometimes been able to express.
+            So no, Aakanksha... you are not replaceable to me. There were never 5 girls. There has only ever been you.
           </p>
         </motion.div>
       </div>

@@ -134,9 +134,14 @@ const content = {
 
   breakingNews: [
     {
-      headline: "Boy Misses Girl For 8 Days Straight, Fails Miserably At Acting Normal",
+      headline: "Boy Admits Biggest Regret: A Childish Lie To Make Her Jealous",
       article:
-        'In a shocking turn of events, sources confirm that Shubham has spent the past week constantly looking at his phone, opening chats, typing words, and deleting them. Experts say his productivity has dropped by 99% in her absence.',
+        'In an unprecedented press conference, Shubham confessed that his claim of "sending follow requests to 5 other girls" after Aakanksha initially rejected his request was 100% fabricated. He said it was an immature attempt to test her reaction, and he regrets it every single day.',
+    },
+    {
+      headline: "Investigation Confirms: Exactly Zero Other Girls Exist In His Life",
+      article:
+        'A thorough forensic examination of all records has confirmed what Shubham has been trying to prove: there never were 5 other girls. There was never anyone else. Aakanksha was, and remains, the only one he has ever looked forward to talking to.',
     },
     {
       headline: "Global Snack Crisis Declared After Food Department Head Goes Quiet",
@@ -144,58 +149,58 @@ const content = {
         'Without Aakanksha\'s daily food cravings, snack debates, and dramatic menu choices, the local pantry has reportedly fallen into complete silence. Officials demand the return of the Chief Food Officer.',
     },
     {
-      headline: "Overthinking Championship Postponed Due To Loud Silence",
+      headline: "Boy Purchases 'aakankshaaa.in' Domain Just To Prove His Sincerity",
       article:
-        'While Aakanksha holds the undisputed gold medal in overthinking, observers report that Shubham has spent this entire quiet week analyzing every second of their disagreement and realizing how much she matters.',
+        'Realizing that a simple text message couldn\'t undo broken trust, Shubham spent days coding and building an entire digital sanctuary just for her. Insiders report: "He wants to show real effort, not just empty words."',
     },
     {
-      headline: "Boy Purchases 'aakankshaaa.in' Domain Just To Apologize Properly",
+      headline: "Overthinking Championship: Both Sides In Deep Silence",
       article:
-        'In an effort to prove that a casual text wasn\'t enough, Shubham stayed up for days learning, designing, and coding an entire digital sanctuary just for her. Insiders report: "He just wants her to smile again."',
+        'While Aakanksha is an Olympic gold medalist in overthinking, sources confirm that Shubham has spent the past week replaying every single word and missing her presence more than he can describe.',
     },
     {
-      headline: "Linguistic Study: 'Okay' Was Always More Than Just A Word",
+      headline: "Official Notice: Zero Pressure, Just Honest Vulnerability",
       article:
-        'A team of researchers confirms that behind all the dramatic reactions, mood swings, and "I\'m fines" is someone with the softest heart who never deserved to be spoken to with anger.',
-    },
-    {
-      headline: "Official Notice: Zero Pressure, Pure Sincere Effort",
-      article:
-        'Sources close to the creator confirm this website comes with no guilt-tripping, no demands, and no rush. Just an honest reminder from someone who misses her deeply and is waiting patiently.',
+        'Sources close to the creator confirm this website comes with no guilt-tripping, no demands, and no rush. Just an honest boy trying to earn back the trust of the only girl that matters to him.',
     },
   ],
 
   apologyLines: [
-    "I know I've hurt you.",
-    "I know things between us haven't felt the way they should.",
-    "And I'm not making this website to force you to forgive me.",
-    "I just wanted to say that I'm genuinely sorry.",
-    "You matter to me.",
-    "What we had matters to me.",
-    "And despite everything, I still care about you deeply.",
+    "I know I hurt you, and I know I broke your trust.",
+    "Making up that stupid lie just to see how you would react was childish and wrong.",
+    "And letting it go on for 15 days before telling you the truth made it so much worse.",
+    "I understand why you stopped talking to me, and why you doubted what kind of guy I am.",
+    "I am not making this website to force you to forgive me or rush you.",
+    "I just wanted you to know the absolute truth: there was never anyone else.",
+    "You are the only person who matters to me. And I am genuinely, deeply sorry.",
   ],
 
   letter: `Dear Aakanksha,
 
-It’s been over a week since we talked. And honestly? It’s been the quietest, heaviest week I’ve had in a long time.
+It’s been over a week since we talked, and honestly, every single day has felt heavier than the last.
 
-I know I messed up. When I said "Ho kaun tum?" to you in anger, I said something I didn't mean, in a way you never deserved. You didn't deserve that sharpness, and you didn't deserve to feel like you were nothing to me.
+I know why you're hurt. And I know why you stopped talking to me.
 
-I hate that I made you doubt who I am. I’m not that cold, careless guy who takes people for granted. Especially not you.
+I told you a stupid, childish lie to make you jealous — that after you initially rejected my follow request on Instagram, I sent requests to 5 other girls. I said it in a moment of childish ego, just to test how you’d react, to see if you cared. And letting that lie hang for 15 days before finally telling you the truth was the biggest mistake I have ever made.
 
-I didn't want to just send a casual "sorry" over text and pretend everything was fine. And I didn't want to repeat anything from the magazine. So I bought this domain — aakankshaaa.in — and spent days building this entire website from scratch. Not to show off, and definitely not to pressure you into talking to me before you're ready.
+When I finally told you the truth, you didn't know what to believe. You felt like I was playing games, and you started doubting what kind of guy I really am.
 
-I just wanted you to see that you are worth the effort. Every single minute of it.
+I need you to hear this with complete honesty:
+There were no other girls. Not five, not one, not ever. I didn't send requests to anyone. There has only ever been you.
 
-I miss your random messages. I miss your food cravings, your overthinking, your dramatic reactions, and the way you make ordinary moments feel alive.
+I hate that my stupidity made you question my character. I am not a player, I am not that careless guy who moves on to the next person, and I would never treat you like you're replaceable. You are the only person whose messages I wait for, whose absence leaves everything feeling empty.
 
-Take all the time you need. There is zero pressure from my side. Whenever you're ready, I'm right here.
+I didn't want to just send another text that felt like empty words. That’s why I bought this domain — aakankshaaa.in — and spent days building this entire website from scratch. I wanted to put in real effort, real time, and real honesty to show you how much you truly mean to me.
+
+I miss your texts. I miss your laugh. I miss your overthinking, your dramatic reactions, and having you in my everyday life.
+
+I know trust takes time to heal, and I will wait as long as it takes. There is zero pressure from my side. Whenever you're ready, I'm right here.
 
 With all my heart,
 Shubham`,
 
   finalMessage:
-    `A week of silence showed me more than any words could. You are the only person I look forward to, and I am truly sorry for my anger. Take all the time you need — whenever you're ready to talk, I'm right here. 🤍`,
+    `There were never 5 other girls. There was only ever you. I made a foolish mistake to test your feelings, and I am truly sorry for breaking your trust. Take all the time you need — whenever you're ready to talk, I'm right here. 🤍`,
 };
 
 export default content;
