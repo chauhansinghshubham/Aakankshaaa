@@ -71,14 +71,24 @@ export default function Lightbox({ photos, initialIndex, onClose }) {
     >
       {/* Close */}
       <button
-        className="absolute top-6 right-6 text-white/60 hover:text-white text-3xl z-10 transition-colors"
+        className="absolute text-white/70 hover:text-white text-3xl z-20 transition-colors w-11 h-11 flex items-center justify-center rounded-full glass"
+        style={{
+          top: 'calc(1rem + env(safe-area-inset-top, 0px))',
+          right: 'calc(1rem + env(safe-area-inset-right, 0px))',
+        }}
         onClick={onClose}
+        aria-label="Close"
       >
         ×
       </button>
 
       {/* Counter */}
-      <div className="absolute top-6 left-1/2 -translate-x-1/2 text-white/40 text-sm font-mono">
+      <div
+        className="absolute left-1/2 -translate-x-1/2 text-white/50 text-sm font-mono z-10"
+        style={{
+          top: 'calc(1.25rem + env(safe-area-inset-top, 0px))',
+        }}
+      >
         {index + 1} / {photos.length}
       </div>
 

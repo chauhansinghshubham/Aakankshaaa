@@ -61,8 +61,12 @@ export default function MusicPlayer() {
       <audio ref={audioRef} src={content.music} preload="none" />
 
       <div
-        className="fixed bottom-6 right-6 z-[9990] flex flex-col items-end gap-2"
-        style={{ fontFamily: 'var(--font-sans)' }}
+        className="fixed z-[9990] flex flex-col items-end gap-2"
+        style={{
+          fontFamily: 'var(--font-sans)',
+          bottom: 'calc(1.25rem + env(safe-area-inset-bottom, 0px))',
+          right: 'calc(1.25rem + env(safe-area-inset-right, 0px))',
+        }}
       >
         {/* Expanded panel */}
         {expanded && (

@@ -35,7 +35,7 @@ export default function Opening({ onEnter }) {
 
   return (
     <motion.div
-      className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden"
+      className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden w-full h-full min-h-[100dvh]"
       style={{ background: 'var(--bg-base)' }}
       exit={{ opacity: 0, scale: 1.05 }}
       transition={{ duration: 0.8, ease: 'easeInOut' }}
@@ -68,18 +68,20 @@ export default function Opening({ onEnter }) {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6 flex flex-col items-center gap-8 max-w-2xl">
+      <div className="relative z-10 text-center px-4 sm:px-6 flex flex-col items-center gap-6 sm:gap-8 max-w-2xl w-full">
         {/* Heading */}
-        <div>
+        <div className="w-full">
           <h1
-            className="text-5xl md:text-7xl font-serif font-bold leading-tight"
+            className="font-serif font-bold leading-tight"
             style={{
               fontFamily: 'var(--font-serif)',
+              fontSize: 'clamp(2.2rem, 8vw, 4.5rem)',
               background: 'linear-gradient(135deg, #fff 0%, var(--color-pink-light) 50%, var(--color-gold) 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
               minHeight: '1.2em',
+              wordBreak: 'break-word',
             }}
           >
             {displayedText}
