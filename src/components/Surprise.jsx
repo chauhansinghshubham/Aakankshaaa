@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ScrollReveal from './ScrollReveal';
 import content from '../config/content';
+import flowerImg from '../assets/flowers.jpg';
 
 function createConfetti() {
   return Array.from({ length: 60 }, (_, i) => ({
@@ -216,28 +217,56 @@ export default function Surprise() {
         <AnimatePresence>
           {revealed && (
             <motion.div
-              className="relative mt-8 glass rounded-2xl p-8"
+              className="relative mt-8 glass rounded-3xl p-6 sm:p-8 max-w-md mx-auto text-center overflow-hidden"
               style={{
-                border: '1px solid rgba(201,169,110,0.3)',
-                boxShadow: '0 0 60px rgba(201,169,110,0.1)',
+                background: 'linear-gradient(135deg, rgba(32, 20, 48, 0.95) 0%, rgba(16, 10, 26, 0.98) 100%)',
+                border: '1.5px solid rgba(201,169,110,0.4)',
+                boxShadow: '0 25px 60px rgba(0,0,0,0.8), 0 0 50px rgba(233,30,140,0.2)',
               }}
-              initial={{ opacity: 0, y: 20, scale: 0.95 }}
+              initial={{ opacity: 0, y: 25, scale: 0.93 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.6, ease: 'easeOut' }}
             >
               {sparkles && <SparkleShower active />}
-              <p
-                className="text-3xl mb-4"
-                style={{ fontFamily: 'var(--font-serif)', color: 'white' }}
+
+              {/* Polaroid Photo Frame */}
+              <motion.div
+                className="bg-white/95 p-3 sm:p-4 pb-4 sm:pb-5 rounded-2xl shadow-2xl mx-auto max-w-[280px] sm:max-w-[320px] select-none"
+                style={{
+                  transform: 'rotate(-2deg)',
+                  boxShadow: '0 15px 35px rgba(0,0,0,0.5)',
+                }}
+                whileHover={{ rotate: 0, scale: 1.02 }}
+                transition={{ duration: 0.3 }}
               >
-                You've officially reached the end ❤️
-              </p>
-              <p
-                className="text-base leading-relaxed"
-                style={{ color: 'var(--color-muted)', fontFamily: 'var(--font-sans)' }}
+                <div className="rounded-xl overflow-hidden aspect-[3/4] bg-neutral-900 shadow-inner">
+                  <img
+                    src={flowerImg}
+                    alt="Kuch yaad aaya"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </motion.div>
+
+              {/* Caption beneath */}
+              <motion.div
+                className="mt-6"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.25, duration: 0.5 }}
               >
-                {content.finalMessage}
-              </p>
+                <h3
+                  className="text-2xl sm:text-3xl font-serif italic font-bold tracking-wide"
+                  style={{
+                    fontFamily: 'var(--font-serif)',
+                    background: 'linear-gradient(135deg, #ffffff 0%, var(--color-pink-light) 50%, var(--color-gold) 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                  }}
+                >
+                  "Kuch yaad aaya...!!" 🌸
+                </h3>
+              </motion.div>
             </motion.div>
           )}
         </AnimatePresence>
