@@ -7,7 +7,6 @@ import Gallery from './components/Gallery';
 import OurStory from './components/OurStory';
 import LoveThings from './components/LoveThings';
 import HoKaunTum from './components/HoKaunTum';
-import FourMonths from './components/FourMonths';
 import BreakingNews from './components/BreakingNews';
 import Apology from './components/Apology';
 import Letter from './components/Letter';
@@ -68,7 +67,6 @@ export default function App() {
             <OurStory />
             <LoveThings />
             <HoKaunTum />
-            <FourMonths />
             <BreakingNews />
             <Apology />
             <Letter />
