@@ -15,6 +15,7 @@ import FinalPage from './components/FinalPage';
 import MusicPlayer from './components/MusicPlayer';
 import Cursor from './components/Cursor';
 import ParticleSystem from './components/ParticleSystem';
+import ChapterDivider from './components/ChapterDivider';
 
 export default function App() {
   const [hasEntered, setHasEntered] = useState(false);
@@ -63,14 +64,23 @@ export default function App() {
           {/* Pages */}
           <main style={{ position: 'relative', zIndex: 2 }}>
             <HerSection />
+            <ChapterDivider whisper="A collection of the girl who lights up every room..." icon="🌸" />
             <Gallery />
+            <ChapterDivider whisper="Every picture has a memory, and this is how it all began..." icon="📖" />
             <OurStory />
+            <ChapterDivider whisper="Through all those memories, I fell for every piece of you..." icon="💖" />
             <LoveThings />
+            <ChapterDivider whisper="Musafir main bhatka, tu mera basera..." icon="✨" />
             <HoKaunTum />
+            <ChapterDivider whisper="A little chaos, a lot of drama, and some headlines..." icon="🗞️" />
             <BreakingNews />
+            <ChapterDivider whisper="Beyond the laughter, the quiet truths I need to tell you..." icon="💌" />
             <Apology />
+            <ChapterDivider whisper="What words couldn't say out loud, written with care..." icon="✒️" />
             <Letter />
+            <ChapterDivider whisper="A little smile for you before we reach the end..." icon="🎁" />
             <Surprise />
+            <ChapterDivider whisper="Under the fairy lights, just you and my honest heart..." icon="🤍" />
             <FinalPage
               onReplay={handleReplay}
               onReachedLastPage={() => setHasReachedLastPage(true)}
