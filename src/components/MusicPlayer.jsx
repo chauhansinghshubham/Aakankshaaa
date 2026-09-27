@@ -19,7 +19,7 @@ export default function MusicPlayer({ hasReachedLastPage = false }) {
     setPopup({ message, emoji, id: Date.now() });
     popupTimerRef.current = setTimeout(() => {
       setPopup(null);
-    }, 5500);
+    }, 7000);
   }, []);
 
   useEffect(() => {
@@ -64,7 +64,10 @@ export default function MusicPlayer({ hasReachedLastPage = false }) {
     if (playAttemptCount === 0) {
       // 1st attempt: Do NOT play song, show playful warning
       setPlayAttemptCount(1);
-      showPopup('Gaana baad me sun lena Aakanksha, Pehle meri baatein sun lo', '🧸');
+      showPopup(
+        'Gaana baad me sun lena Aakanksha, Pehle meri baatein sun lo. Agar gaana sunte hue padhna chahti ho toh fir se play kar lo ho jayega',
+        '🧸'
+      );
       return;
     }
 
@@ -108,7 +111,7 @@ export default function MusicPlayer({ hasReachedLastPage = false }) {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 10, scale: 0.95 }}
               transition={{ type: 'spring', damping: 20, stiffness: 350 }}
-              className="max-w-[280px] sm:max-w-xs p-3.5 sm:p-4 rounded-2xl pointer-events-auto cursor-pointer select-none mb-1 text-left"
+              className="max-w-[310px] sm:max-w-sm p-3.5 sm:p-4 rounded-2xl pointer-events-auto cursor-pointer select-none mb-1 text-left"
               style={{
                 background: 'linear-gradient(135deg, rgba(35, 20, 52, 0.97) 0%, rgba(18, 12, 30, 0.99) 100%)',
                 border: '1.5px solid rgba(233, 30, 140, 0.55)',
