@@ -72,28 +72,26 @@ export default function Apology() {
 
 function ApologyLine({ line, index }) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-80px' });
+  const isInView = useInView(ref, { once: true, margin: '-40px' });
+
+  const isHighlighted = index === 3 || index === 4 || index === 5 || index === 6;
 
   return (
     <motion.p
       ref={ref}
-      className="text-lg md:text-xl leading-relaxed"
+      className="text-lg sm:text-2xl leading-relaxed text-center"
       style={{
         fontFamily: 'var(--font-sans)',
-        fontWeight: index === 6 || index === 7 || index === 8
-          ? 500
-          : 300,
-        color: index >= 6
-          ? 'rgba(255,255,255,0.9)'
+        fontWeight: isHighlighted ? 400 : 300,
+        color: isHighlighted
+          ? 'rgba(255,255,255,0.95)'
           : 'rgba(255,255,255,0.6)',
-        textAlign: index % 2 === 0 ? 'left' : 'right',
-        paddingLeft: index % 2 === 0 ? 0 : '15%',
-        paddingRight: index % 2 === 0 ? '15%' : 0,
+        letterSpacing: '0.01em',
       }}
-      initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-      animate={isInView ? { opacity: 1, x: 0 } : {}}
+      initial={{ opacity: 0, y: 20 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{
-        duration: 0.9,
+        duration: 0.8,
         ease: 'easeOut',
         delay: 0.1,
       }}
