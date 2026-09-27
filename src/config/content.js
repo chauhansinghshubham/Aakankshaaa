@@ -22,44 +22,49 @@ const content = {
       { src: '/photos/gallery/12.jpg', caption: '❤️' },
     ],
     memories: [
-      { src: '/photos/memories/1.jpg', label: 'Month 1' },
-      { src: '/photos/memories/2.jpg', label: 'A random day' },
-      { src: '/photos/memories/3.jpg', label: 'That evening' },
-      { src: '/photos/memories/4.jpg', label: 'One of the best days' },
-      { src: '/photos/memories/5.jpg', label: 'Us being us' },
-      { src: '/photos/memories/6.jpg', label: 'My favourite memory' },
+      { src: '/photos/memories/1.jpg', label: 'The It Girl ✨' },
+      { src: '/photos/memories/2.jpg', label: 'Cute — unfortunately 🌸' },
+      { src: '/photos/memories/3.jpg', label: 'Food department head 🍜' },
+      { src: '/photos/memories/4.jpg', label: 'Panic potato moments 🥔' },
+      { src: '/photos/memories/5.jpg', label: 'That smile >>>' },
+      { src: '/photos/memories/6.jpg', label: 'Us being us ❤️' },
     ],
   },
 
   timeline: [
     {
-      date: '[DATE 1]',
-      title: '[MEMORY TITLE 1]',
-      description: '[A short description of this memory]',
+      date: 'Month 1 · The Beginning',
+      title: 'When Chaos Entered My Life',
+      description:
+        'If someone had told me one person could bring this much happiness, chaos, arguments, laughter, and overthinking into my life, I wouldn\'t have believed them. And then I met you.',
       photo: '/photos/timeline/1.jpg',
     },
     {
-      date: '[DATE 2]',
-      title: '[MEMORY TITLE 2]',
-      description: '[A short description of this memory]',
+      date: 'Month 2 · The Everyday',
+      title: 'Somewhere Between The Talks',
+      description:
+        'Somewhere between the late-night conversations, the random messages, and the unfiltered laughs, you quietly became the person I looked forward to talking to every single day.',
       photo: '/photos/timeline/2.jpg',
     },
     {
-      date: '[DATE 3]',
-      title: '[MEMORY TITLE 3]',
-      description: '[A short description of this memory]',
+      date: 'Month 3 · The Fights & The Distance',
+      title: 'Argue With You & Still Miss You',
+      description:
+        'The hardest moments taught me the most. Even when we disagreed and things got complicated, you were still the only person whose silence I noticed and who I wanted to work things out with.',
       photo: '/photos/timeline/3.jpg',
     },
     {
-      date: '[DATE 4]',
-      title: '[MEMORY TITLE 4]',
-      description: '[A short description of this memory]',
+      date: 'Month 4 · The Revelation',
+      title: 'Musafir Main Bhatka, Tu Mera Basera',
+      description:
+        'Four months of memories, laughter, fights, stupid conversations, and real feelings. You are not "nothing" to me, Aakanksha. You became the most important part of my everyday life.',
       photo: '/photos/timeline/4.jpg',
     },
     {
-      date: '[DATE 5]',
-      title: '[MEMORY TITLE 5]',
-      description: '[A short description of this memory]',
+      date: 'Today & Beyond',
+      title: 'I Want Another Chapter',
+      description:
+        'I don\'t want these four months to be where our story ends. I want another chapter. A better one. A real one. Will you be mine? ❤️',
       photo: '/photos/timeline/5.jpg',
     },
   ],
