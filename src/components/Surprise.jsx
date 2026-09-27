@@ -223,21 +223,24 @@ export default function Surprise() {
           )}
         </AnimatePresence>
 
-        {/* Subtle, understated text beneath buttons */}
-        <motion.p
-          className="text-xs sm:text-sm font-sans mt-6 sm:mt-8 px-6 max-w-lg mx-auto select-none tracking-wide text-center"
-          style={{
-            color: 'rgba(255, 255, 255, 0.28)',
-            letterSpacing: '0.02em',
-            lineHeight: 1.6,
-          }}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.3 }}
-        >
-          Don't think that this whole thing is made with AI, it required some serious skills to make all this
-        </motion.p>
+        {/* Subtle, discreet note placed thoughtfully below with ample breathing room */}
+        <div className="mt-14 sm:mt-20 flex flex-col items-center justify-center w-full px-4 select-none">
+          <div className="w-1.5 h-1.5 rounded-full bg-white/15 mb-3" />
+          <motion.p
+            className="text-xs sm:text-sm font-sans text-center max-w-xs sm:max-w-md mx-auto"
+            style={{
+              color: 'rgba(255, 255, 255, 0.24)',
+              letterSpacing: '0.025em',
+              lineHeight: 1.65,
+            }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.2, delay: 0.2 }}
+          >
+            Don't think that this whole thing is made with AI, it required some serious skills to make all this
+          </motion.p>
+        </div>
 
         {/* Aesthetic Centered Popup Modal */}
         <AnimatePresence>
