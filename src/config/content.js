@@ -61,10 +61,10 @@ const content = {
       photo: '/photos/timeline/4.jpg',
     },
     {
-      date: 'Today & Beyond',
-      title: 'I Want Another Chapter',
+      date: 'This Past Week · The Quiet',
+      title: 'Missing You & Standing By',
       description:
-        'I don\'t want these four months to be where our story ends. I want another chapter. A better one. A real one. Will you be mine? ❤️',
+        'A week of silence showed me more than any words could. You are not someone I can ever take for granted. I am genuinely sorry for my anger, and I\'m right here whenever you\'re ready to talk.',
       photo: '/photos/timeline/5.jpg',
     },
   ],
@@ -134,34 +134,34 @@ const content = {
 
   breakingNews: [
     {
-      headline: "The It Girl of 2006 Reportedly Too Cute To Handle",
+      headline: "Boy Misses Girl For 8 Days Straight, Fails Miserably At Acting Normal",
       article:
-        'In a shocking turn of events, sources confirm that Aakanksha, born 31st August 2006, has secured the title of "Favourite Person" without any competition. Witnesses report 20 years of chaos and zero chill.',
+        'In a shocking turn of events, sources confirm that Shubham has spent the past week constantly looking at his phone, opening chats, typing words, and deleting them. Experts say his productivity has dropped by 99% in her absence.',
     },
     {
-      headline: 'Investigation: "Okay" Has 17 Different Meanings',
+      headline: "Global Snack Crisis Declared After Food Department Head Goes Quiet",
       article:
-        'A team of top linguistic researchers studying Aakanksha has confirmed that her use of the word "okay" ranges from "I love you" to "you have 3 seconds to apologize before nuclear launch."',
+        'Without Aakanksha\'s daily food cravings, snack debates, and dramatic menu choices, the local pantry has reportedly fallen into complete silence. Officials demand the return of the Chief Food Officer.',
     },
     {
-      headline: "Food Department Head Demands Snacks Immediately",
+      headline: "Overthinking Championship Postponed Due To Loud Silence",
       article:
-        'Emergency meetings have been called after the Chief Food Officer Aakanksha confirmed she is hungry again. Officials recommend immediate delivery of her favourite treats.',
+        'While Aakanksha holds the undisputed gold medal in overthinking, observers report that Shubham has spent this entire quiet week analyzing every second of their disagreement and realizing how much she matters.',
     },
     {
-      headline: "Local Boy Shubham Still Can't Stop Thinking About Her",
+      headline: "Boy Purchases 'aakankshaaa.in' Domain Just To Apologize Properly",
       article:
-        'In what scientists are calling "completely expected," local person Shubham has been unable to stop thinking about Aakanksha for four straight months. When asked for comment, he simply smiled.',
+        'In an effort to prove that a casual text wasn\'t enough, Shubham stayed up for days learning, designing, and coding an entire digital sanctuary just for her. Insiders report: "He just wants her to smile again."',
     },
     {
-      headline: "Professional Overthinker Wins Gold Medal Again",
+      headline: "Linguistic Study: 'Okay' Was Always More Than Just A Word",
       article:
-        'Aakanksha has taken home first place in the Overthinking Olympics for analyzing a 3-word text message for 4 hours. Judges awarded bonus points for dramatic flair.',
+        'A team of researchers confirms that behind all the dramatic reactions, mood swings, and "I\'m fines" is someone with the softest heart who never deserved to be spoken to with anger.',
     },
     {
-      headline: "Girl Who Said \"I'm Fine\" Clearly Needs Hugs & Attention",
+      headline: "Official Notice: Zero Pressure, Pure Sincere Effort",
       article:
-        'Inside sources reveal that behind the "Angry Bird" expression is a low-key softie who deserves all the love, happiness, and peace in the world.',
+        'Sources close to the creator confirm this website comes with no guilt-tripping, no demands, and no rush. Just an honest reminder from someone who misses her deeply and is waiting patiently.',
     },
   ],
 
@@ -177,39 +177,25 @@ const content = {
 
   letter: `Dear Aakanksha,
 
-Welcome to your 20th year.
+It’s been over a week since we talked. And honestly? It’s been the quietest, heaviest week I’ve had in a long time.
 
-If someone had told me that one person could bring this much happiness, chaos, arguments, laughter and overthinking into my life, I probably would've asked them to stay away from that person.
+I know I messed up. When I said "Ho kaun tum?" to you in anger, I said something I didn't mean, in a way you never deserved. You didn't deserve that sharpness, and you didn't deserve to feel like you were nothing to me.
 
-And then I met you.
+I hate that I made you doubt who I am. I’m not that cold, careless guy who takes people for granted. Especially not you.
 
-Four months later, here I am, making an entire world about you.
-So I guess I lost that battle.
-But honestly? I'm glad I did.
+I didn't want to just send a casual "sorry" over text and pretend everything was fine. And I didn't want to repeat anything from the magazine. So I bought this domain — aakankshaaa.in — and spent days building this entire website from scratch. Not to show off, and definitely not to pressure you into talking to me before you're ready.
 
-This is basically a collection of all the things that make you... you.
-The cute parts.
-The crazy parts.
-The emotional parts.
-The annoying parts.
-And all the little things that somehow made you become such an important part of my life.
+I just wanted you to see that you are worth the effort. Every single minute of it.
 
-Happy 20th, Aakanksha.
-This one's yours.
+I miss your random messages. I miss your food cravings, your overthinking, your dramatic reactions, and the way you make ordinary moments feel alive.
 
-— Shubham`,
+Take all the time you need. There is zero pressure from my side. Whenever you're ready, I'm right here.
+
+With all my heart,
+Shubham`,
 
   finalMessage:
-    `I don't know exactly when it happened. Somewhere between the conversations, the laughs, the arguments, the stupid moments and all the time we spent together... I fell for you.
-
-And even when things between us became complicated, that feeling didn't just disappear. If anything, the distance made me understand it better.
-
-I love you, Aakanksha. Not because everything between us has always been perfect. But because even when things aren't perfect, you're still the person I want to work things out with.
-
-I don't want these four months to be where our story ends. I want another chapter. A better one. A real one.
-
-So here's my question...
-Will you be mine? ❤️`,
+    `A week of silence showed me more than any words could. You are the only person I look forward to, and I am truly sorry for my anger. Take all the time you need — whenever you're ready to talk, I'm right here. 🤍`,
 };
 
 export default content;

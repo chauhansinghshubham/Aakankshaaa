@@ -92,9 +92,9 @@ export default function HerSection() {
       <ScrollReveal>
         <p
           className="text-xs tracking-[0.4em] uppercase mb-4 text-center font-bold"
-          style={{ color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', letterSpacing: '0.35em' }}
+          style={{ color: 'var(--color-gold)', fontFamily: 'var(--font-sans)', letterSpacing: '0.3em' }}
         >
-          ✦ VOGUE · THE AAKANKSHA EDITION ✦
+          ✦ AAKANKSHAAA.IN ✦
         </p>
       </ScrollReveal>
 
@@ -109,9 +109,9 @@ export default function HerSection() {
             backgroundClip: 'text',
           }}
         >
-          THE HOTTEST
+          THE ONE &amp; ONLY
           <br />
-          <span style={{ fontStyle: 'italic', fontSize: '0.8em' }}>IT GIRL.</span>
+          <span style={{ fontStyle: 'italic', fontSize: '0.85em' }}>AAKANKSHA.</span>
         </h2>
       </ScrollReveal>
 
@@ -120,10 +120,10 @@ export default function HerSection() {
           className="text-sm md:text-base text-center mb-10"
           style={{ color: 'var(--color-muted)', fontFamily: 'var(--font-sans)', maxWidth: 480 }}
         >
-          The girl who somehow manages to be cute, crazy, emotional &amp; annoying at the same time.
+          The only person whose absence made this entire week feel quiet.
           <br />
-          <span style={{ color: 'var(--color-gold)', fontSize: '0.75rem', letterSpacing: '0.2em' }} className="uppercase mt-2 inline-block font-medium">
-            20 Years. Zero Chill. ✦ The It Girl of 2006 ✦ 31 August
+          <span style={{ color: 'var(--color-gold)', fontSize: '0.8rem', letterSpacing: '0.15em' }} className="uppercase mt-2 inline-block font-medium">
+            A website built with real effort · Just for you
           </span>
         </p>
       </ScrollReveal>

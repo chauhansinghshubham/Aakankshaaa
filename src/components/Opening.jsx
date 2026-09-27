@@ -108,12 +108,12 @@ export default function Opening({ onEnter }) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-lg md:text-xl text-center leading-relaxed"
+              className="text-base sm:text-lg text-center leading-relaxed"
               style={{ color: 'var(--color-muted)', fontFamily: 'var(--font-sans)', maxWidth: 480 }}
             >
-              No pressure. No expectations.
+              A week of silence felt like a year.
               <br />
-              Just a few things I wanted you to see.
+              No pressure. No demands. Just something I stayed up building for you.
             </motion.p>
           )}
         </AnimatePresence>

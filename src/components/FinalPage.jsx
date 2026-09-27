@@ -36,10 +36,10 @@ function FinalPhoto() {
 }
 
 const TEXT_SEQUENCE = [
-  { text: `For ${content.name} ❤️`, delay: 0.5, size: 'clamp(2rem, 6vw, 4rem)', style: 'italic', color: 'var(--color-pink-light)' },
-  { text: 'Thank you for being a part of my life.', delay: 1.5, size: 'clamp(1.1rem, 3vw, 1.5rem)', style: 'normal', color: 'rgba(255,255,255,0.8)' },
-  { text: content.finalMessage, delay: 2.8, size: 'clamp(0.95rem, 2.5vw, 1.2rem)', style: 'normal', color: 'var(--color-gold)' },
-  { text: 'Take your time. No pressure.\nI just wanted you to smile.', delay: 4.5, size: 'clamp(0.85rem, 2vw, 1rem)', style: 'normal', color: 'rgba(255,255,255,0.4)' },
+  { text: `For Aakanksha 🤍`, delay: 0.5, size: 'clamp(2.2rem, 7vw, 4.5rem)', style: 'italic', color: 'var(--color-pink-light)' },
+  { text: 'A week of quiet made me realize how much your presence matters.', delay: 1.5, size: 'clamp(1.1rem, 3vw, 1.4rem)', style: 'normal', color: 'rgba(255,255,255,0.85)' },
+  { text: content.finalMessage, delay: 2.8, size: 'clamp(1rem, 2.5vw, 1.25rem)', style: 'normal', color: 'var(--color-gold)' },
+  { text: 'Built with genuine effort & care at aakankshaaa.in\nWhenever you are ready to talk, I am right here.\n— Shubham', delay: 4.5, size: 'clamp(0.9rem, 2vw, 1.05rem)', style: 'normal', color: 'rgba(255,255,255,0.6)' },
 ];
 
 export default function FinalPage({ onReplay }) {
