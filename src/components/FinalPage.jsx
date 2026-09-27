@@ -106,9 +106,28 @@ function FinalPhoto() {
   );
 }
 
-export default function FinalPage({ onReplay }) {
+export default function FinalPage({ onReplay, onReachedLastPage }) {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) {
+          onReachedLastPage?.();
+        }
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [onReachedLastPage]);
+
   return (
     <section
+      ref={sectionRef}
+      id="final-page"
       className="relative min-h-screen py-24 px-4 sm:px-6 flex flex-col items-center justify-center overflow-hidden"
       style={{ background: 'var(--bg-base)' }}
     >
@@ -129,6 +148,7 @@ export default function FinalPage({ onReplay }) {
           }}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
+          onViewportEnter={() => onReachedLastPage?.()}
           viewport={{ once: true }}
           transition={{ duration: 1.2, ease: 'easeOut' }}
         >

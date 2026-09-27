@@ -19,6 +19,7 @@ import ParticleSystem from './components/ParticleSystem';
 
 export default function App() {
   const [hasEntered, setHasEntered] = useState(false);
+  const [hasReachedLastPage, setHasReachedLastPage] = useState(false);
 
   const handleEnter = useCallback(() => {
     setHasEntered(true);
@@ -30,7 +31,10 @@ export default function App() {
 
   const handleReplay = useCallback(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    setTimeout(() => setHasEntered(false), 400);
+    setTimeout(() => {
+      setHasEntered(false);
+      setHasReachedLastPage(false);
+    }, 400);
   }, []);
 
   return (
@@ -55,7 +59,7 @@ export default function App() {
           <ParticleSystem />
 
           {/* Music player */}
-          <MusicPlayer />
+          <MusicPlayer hasReachedLastPage={hasReachedLastPage} />
 
           {/* Pages */}
           <main style={{ position: 'relative', zIndex: 2 }}>
@@ -69,7 +73,10 @@ export default function App() {
             <Apology />
             <Letter />
             <Surprise />
-            <FinalPage onReplay={handleReplay} />
+            <FinalPage
+              onReplay={handleReplay}
+              onReachedLastPage={() => setHasReachedLastPage(true)}
+            />
           </main>
         </>
       )}

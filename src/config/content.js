@@ -1,6 +1,7 @@
 const content = {
   name: 'Aakanksha',
-  music: '/music/song.mp3', // replace with your actual music file path
+  music: '/music/jaavedaan_hai.mp3',
+  musicTitle: 'Jaavedaan Hai - KK (1920)',
 
   photos: {
     hero: '/photos/hero.jpg',
