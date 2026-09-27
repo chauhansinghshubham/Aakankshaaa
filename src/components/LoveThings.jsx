@@ -12,12 +12,16 @@ const GRADIENTS = [
   'linear-gradient(135deg, rgba(124,58,237,0.4) 0%, rgba(233,30,140,0.2) 100%)',
 ];
 
-function FlipCard({ item, index }) {
+function FlipCard({ item, index, isLast }) {
   const [flipped, setFlipped] = useState(false);
 
   return (
     <motion.div
-      className="cursor-pointer"
+      className={`cursor-pointer ${
+        isLast
+          ? 'col-span-2 md:col-span-1 w-full max-w-[calc(50%-0.5rem)] md:max-w-none mx-auto justify-self-center'
+          : ''
+      }`}
       style={{ perspective: 1000, height: 180 }}
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -127,7 +131,12 @@ export default function LoveThings() {
         {/* Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {things.map((item, i) => (
-            <FlipCard key={i} item={item} index={i} />
+            <FlipCard
+              key={i}
+              item={item}
+              index={i}
+              isLast={i === things.length - 1}
+            />
           ))}
         </div>
       </div>
