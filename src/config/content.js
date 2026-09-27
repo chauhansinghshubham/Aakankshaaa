@@ -66,126 +66,150 @@ const content = {
 
   loveThings: [
     {
-      title: 'Your smile',
-      message: 'Honestly, the way you smile could fix any bad day. Every single time.',
+      title: '🏆 Best Smile',
+      message: 'For making people forget what they were saying every single time you smile.',
     },
     {
-      title: 'Your voice',
-      message: 'There is something about the way you talk that just makes everything feel better.',
+      title: '🏆 Professional Overthinker',
+      message: 'Gold medal. Undisputed champion. Overthinks like it\'s a full-time hobby.',
     },
     {
-      title: 'The way you react to things',
-      message: 'Your reactions are the most real, unfiltered things. I love that about you.',
+      title: '🏆 Food Department Head',
+      message: 'Currently accepting snacks and compliments. Chief of all cravings.',
     },
     {
-      title: 'Your random messages',
-      message: 'The random thoughts you send me at weird hours — I love receiving them.',
+      title: '🏆 Most Dramatic Reaction',
+      message: 'Because apparently "okay" can have 17 completely different meanings.',
     },
     {
-      title: 'Your expressions',
-      message: 'Your face literally tells me everything. You cannot hide how you feel and I find that beautiful.',
+      title: '🏆 Cutest Menace',
+      message: 'Cute enough to get away with literally everything. No one can stay mad.',
     },
     {
-      title: 'Your dramatic moments',
-      message: 'Full marks for drama. Oscar-worthy, honestly. I love every bit of it.',
+      title: 'Panic Potato 🥔',
+      message: 'Panics first, asks questions later. But somehow the most adorable potato.',
     },
     {
-      title: 'Your cute side',
-      message: 'The soft, gentle version of you that you only show sometimes — that side is everything.',
+      title: 'Angry Bird 😠',
+      message: 'Full of cute fury. Tries to look fierce, ends up looking twice as cute.',
     },
     {
-      title: 'Your stubborn side',
-      message: 'Annoying? Yes. But also somehow one of the things I admire most about you.',
+      title: 'Social Butterfly 🦋',
+      message: 'Lights up any room she walks into. Effortless charm and energy.',
     },
     {
-      title: 'The way you make ordinary moments memorable',
-      message: 'Nothing feels ordinary when it is with you. That is entirely your fault.',
+      title: 'Photoholic 🍸',
+      message: 'Never met a camera angle she didn\'t slay. Main character in every frame.',
     },
     {
-      title: 'Your overthinking',
-      message: 'Even when it drives me crazy, it means you care deeply. And that matters to me.',
+      title: 'Low-key a Softie 🌸',
+      message: 'Acts tough on the outside, but has the gentlest, sweetest heart on the inside.',
     },
     {
-      title: 'The way you love things',
-      message: 'When you care about something, you go all in. I find that incredibly beautiful.',
+      title: 'Loves Deeply, Laughs Loudly',
+      message: 'When you care, you go all in. And your genuine laugh is my favourite sound.',
     },
     {
-      title: 'Your random mood swings',
-      message: 'Chaotic? Always. Boring? Never. I would not change it.',
+      title: 'Your Random Messages',
+      message: 'Those unexpected thoughts at random hours that completely make my day.',
     },
     {
-      title: 'How you make me feel',
-      message: 'Safe. Understood. Happy. Alive. That is what being around you feels like.',
+      title: 'Your Expressions',
+      message: 'Your face literally tells me everything. You cannot hide how you feel.',
     },
     {
-      title: 'Your laugh',
-      message: 'The sound of you genuinely laughing is one of the best things I have ever heard.',
+      title: 'Making Ordinary Moments Memorable',
+      message: 'Nothing feels ordinary when it\'s with you. That is entirely your fault.',
     },
     {
-      title: 'Just... you',
-      message: 'All of it. Every part of you. That is the honest answer.',
+      title: 'Just... You ❤️',
+      message: 'The cute parts, crazy parts, emotional parts, annoying parts — all of you.',
     },
   ],
 
   breakingNews: [
     {
-      headline: "Local Girl Somehow Becomes Someone's Favourite Person",
+      headline: "The It Girl of 2006 Reportedly Too Cute To Handle",
       article:
-        'In a shocking turn of events, sources close to Shubham confirmed this week that a certain Aakanksha has, without any formal application or interview process, secured the position of "Favourite Person." Experts are still studying how this happened.',
+        'In a shocking turn of events, sources confirm that Aakanksha, born 31st August 2006, has secured the title of "Favourite Person" without any competition. Witnesses report 20 years of chaos and zero chill.',
     },
     {
-      headline: '20-Year-Old Reportedly Too Cute To Handle',
+      headline: 'Investigation: "Okay" Has 17 Different Meanings',
       article:
-        'Emergency meetings have been called after multiple witnesses confirmed that Aakanksha is, in fact, dangerously adorable. Officials say there is no cure. The situation is ongoing.',
+        'A team of top linguistic researchers studying Aakanksha has confirmed that her use of the word "okay" ranges from "I love you" to "you have 3 seconds to apologize before nuclear launch."',
     },
     {
-      headline: 'Sources Confirm: She Is Still Dramatic',
+      headline: "Food Department Head Demands Snacks Immediately",
       article:
-        "After extensive research spanning several months, our team has conclusively confirmed that Aakanksha remains, as expected, dramatically dramatic. The study concluded that this is her greatest asset and also everyone's favourite thing about her.",
+        'Emergency meetings have been called after the Chief Food Officer Aakanksha confirmed she is hungry again. Officials recommend immediate delivery of her favourite treats.',
     },
     {
-      headline: "Shubham Still Can't Stop Thinking About Her",
+      headline: "Local Boy Shubham Still Can't Stop Thinking About Her",
       article:
-        'In what scientists are calling "completely unsurprising," local person Shubham has reportedly been unable to stop thinking about Aakanksha for several months. When asked for comment, he simply said: "I know."',
+        'In what scientists are calling "completely expected," local person Shubham has been unable to stop thinking about Aakanksha for four straight months. When asked for comment, he simply smiled.',
     },
     {
-      headline: "Woman's Random Message Ruins Man's Ability To Focus",
+      headline: "Professional Overthinker Wins Gold Medal Again",
       article:
-        'A single unexpected message from Aakanksha caused a complete productivity collapse for Shubham on Tuesday afternoon. The message, reportedly sent at a completely random time, consisted of something completely unimportant. The impact, however, was enormous.',
+        'Aakanksha has taken home first place in the Overthinking Olympics for analyzing a 3-word text message for 4 hours. Judges awarded bonus points for dramatic flair.',
     },
     {
-      headline: "Girl Who Said \"I'm Fine\" Clearly Not Fine, Insiders Say",
+      headline: "Girl Who Said \"I'm Fine\" Clearly Needs Hugs & Attention",
       article:
-        "Close observers report that Aakanksha's recent \"I'm fine\" statement was, quote, \"obviously not fine at all.\" The investigation continues, but preliminary findings suggest the matter will be resolved through snacks and attention.",
+        'Inside sources reveal that behind the "Angry Bird" expression is a low-key softie who deserves all the love, happiness, and peace in the world.',
     },
   ],
 
   apologyLines: [
-    "I know things haven't been perfectly okay between us lately.",
-    'And I know I haven\'t always said the right things, or been there the right way.',
-    'I know I\'ve made you feel unheard sometimes. That was never okay.',
-    'I know I\'ve been difficult when I should have been patient.',
-    'I know I\'ve said things I didn\'t mean and stayed quiet when I should have spoken.',
-    'I\'m not saying any of this to explain myself.',
-    'I\'m saying it because you deserve to hear it.',
-    'You deserve someone who shows up properly, every time.',
-    'I\'m still learning how to do that. But I want to.',
-    'I\'m sorry. Genuinely.',
+    "\"Ho kaun tum?\" — I said those words to you.",
+    "And maybe at that moment I didn't realise how much they could hurt you.",
+    "You asked me something, I was angry, and I answered you in a way you never deserved.",
+    "I know I've hurt you. I know things between us haven't felt the way they should.",
+    "And I'm not making this to force you to forgive me.",
+    "I just wanted you to know what those words made me realize.",
+    "If you really asked me that question today... who are you to me?",
+    "You're the person whose messages I look forward to. The person whose silence I notice.",
+    "The person I can argue with and still miss.",
+    "The person who somehow became a part of my everyday life.",
+    "So no, Aakanksha... you are not \"nothing\" to me.",
+    "You mean more to me than I have sometimes been able to express. And I'm genuinely sorry.",
   ],
 
-  letter: `[PERSONAL_LETTER]
+  letter: `Dear Aakanksha,
 
-Replace this with your personal letter. Write whatever you feel.
-This is the place where you can say everything you could not say out loud.
+Welcome to your 20th year.
 
-This website was made with a lot of care.
-I hope it made you smile, even if just for a moment.
+If someone had told me that one person could bring this much happiness, chaos, arguments, laughter and overthinking into my life, I probably would've asked them to stay away from that person.
 
-With everything,
-Shubham`,
+And then I met you.
+
+Four months later, here I am, making an entire world about you.
+So I guess I lost that battle.
+But honestly? I'm glad I did.
+
+This is basically a collection of all the things that make you... you.
+The cute parts.
+The crazy parts.
+The emotional parts.
+The annoying parts.
+And all the little things that somehow made you become such an important part of my life.
+
+Happy 20th, Aakanksha.
+This one's yours.
+
+— Shubham`,
 
   finalMessage:
-    '[FINAL_MESSAGE] — Replace this with your closing message to Aakanksha.',
+    `I don't know exactly when it happened. Somewhere between the conversations, the laughs, the arguments, the stupid moments and all the time we spent together... I fell for you.
+
+And even when things between us became complicated, that feeling didn't just disappear. If anything, the distance made me understand it better.
+
+I love you, Aakanksha. Not because everything between us has always been perfect. But because even when things aren't perfect, you're still the person I want to work things out with.
+
+I don't want these four months to be where our story ends. I want another chapter. A better one. A real one.
+
+So here's my question...
+Will you be mine? ❤️`,
 };
 
 export default content;

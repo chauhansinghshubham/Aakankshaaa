@@ -4,12 +4,12 @@ import ScrollReveal from './ScrollReveal';
 import content from '../config/content';
 
 const TAGS = [
-  { text: 'Cute — unfortunately', emoji: '🌸', color: 'rgba(233,30,140,0.15)' },
-  { text: 'Professional Overthinker', emoji: '🌀', color: 'rgba(124,58,237,0.15)' },
-  { text: 'CEO of Random Mood Swings', emoji: '🎭', color: 'rgba(201,169,110,0.12)' },
-  { text: 'Food Department Head', emoji: '🍜', color: 'rgba(233,30,140,0.12)' },
-  { text: 'Too Pretty To Stay Mad', emoji: '✨', color: 'rgba(124,58,237,0.12)' },
-  { text: 'Main Character Energy', emoji: '👑', color: 'rgba(201,169,110,0.15)' },
+  { text: 'Best Smile 🏆', emoji: '✨', color: 'rgba(233,30,140,0.15)' },
+  { text: 'Professional Overthinker 🥇', emoji: '🌀', color: 'rgba(124,58,237,0.15)' },
+  { text: 'Food Department Head 🍜', emoji: '🍟', color: 'rgba(201,169,110,0.12)' },
+  { text: 'Most Dramatic Reaction 🎭', emoji: '🎬', color: 'rgba(233,30,140,0.12)' },
+  { text: 'Cutest Menace 🌸', emoji: '💅', color: 'rgba(124,58,237,0.12)' },
+  { text: 'Main Character Energy 👑', emoji: '💎', color: 'rgba(201,169,110,0.15)' },
 ];
 
 function ProfilePhoto() {
@@ -91,10 +91,10 @@ export default function HerSection() {
       {/* Section title */}
       <ScrollReveal>
         <p
-          className="text-xs tracking-[0.4em] uppercase mb-4 text-center"
-          style={{ color: 'var(--color-gold)', fontFamily: 'var(--font-sans)' }}
+          className="text-xs tracking-[0.4em] uppercase mb-4 text-center font-bold"
+          style={{ color: 'var(--color-gold)', fontFamily: 'var(--font-serif)', letterSpacing: '0.35em' }}
         >
-          ✦ Presenting ✦
+          ✦ VOGUE · THE AAKANKSHA EDITION ✦
         </p>
       </ScrollReveal>
 
@@ -109,18 +109,22 @@ export default function HerSection() {
             backgroundClip: 'text',
           }}
         >
-          THE {content.name.toUpperCase()}
+          THE HOTTEST
           <br />
-          <span style={{ fontStyle: 'italic', fontSize: '0.75em' }}>EDITION</span>
+          <span style={{ fontStyle: 'italic', fontSize: '0.8em' }}>IT GIRL.</span>
         </h2>
       </ScrollReveal>
 
       <ScrollReveal delay={0.2}>
         <p
-          className="text-base md:text-lg text-center mb-10"
-          style={{ color: 'var(--color-muted)', fontFamily: 'var(--font-sans)', maxWidth: 460 }}
+          className="text-sm md:text-base text-center mb-10"
+          style={{ color: 'var(--color-muted)', fontFamily: 'var(--font-sans)', maxWidth: 480 }}
         >
-          20 Years of Chaos, Cuteness &amp; Main-Character Energy ✨
+          The girl who somehow manages to be cute, crazy, emotional &amp; annoying at the same time.
+          <br />
+          <span style={{ color: 'var(--color-gold)', fontSize: '0.75rem', letterSpacing: '0.2em' }} className="uppercase mt-2 inline-block font-medium">
+            20 Years. Zero Chill. ✦ The It Girl of 2006 ✦ 31 August
+          </span>
         </p>
       </ScrollReveal>
 
