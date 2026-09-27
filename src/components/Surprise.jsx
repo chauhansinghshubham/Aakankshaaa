@@ -116,6 +116,16 @@ export default function Surprise() {
     setSparkles(true);
   };
 
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') setRevealed(false);
+    };
+    if (revealed) {
+      window.addEventListener('keydown', handleKeyDown);
+    }
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [revealed]);
+
   const BUTTONS = [
     {
       label: '💌 Open this',
@@ -213,61 +223,104 @@ export default function Surprise() {
           )}
         </AnimatePresence>
 
-        {/* Final reveal */}
+        {/* Aesthetic Centered Popup Modal */}
         <AnimatePresence>
           {revealed && (
-            <motion.div
-              className="relative mt-8 glass rounded-3xl p-6 sm:p-8 max-w-md mx-auto text-center overflow-hidden"
-              style={{
-                background: 'linear-gradient(135deg, rgba(32, 20, 48, 0.95) 0%, rgba(16, 10, 26, 0.98) 100%)',
-                border: '1.5px solid rgba(201,169,110,0.4)',
-                boxShadow: '0 25px 60px rgba(0,0,0,0.8), 0 0 50px rgba(233,30,140,0.2)',
-              }}
-              initial={{ opacity: 0, y: 25, scale: 0.93 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 0.6, ease: 'easeOut' }}
-            >
+            <div className="fixed inset-0 z-[9995] flex items-center justify-center p-4 sm:p-6 overflow-hidden">
+              {/* Blurred Dark Backdrop */}
+              <motion.div
+                className="fixed inset-0 bg-black/80 backdrop-blur-md"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setRevealed(false)}
+              />
+
+              {/* Sparkle Shower inside modal */}
               {sparkles && <SparkleShower active />}
 
-              {/* Polaroid Photo Frame */}
+              {/* Angled Polaroid Keepsake Card */}
               <motion.div
-                className="bg-white/95 p-3 sm:p-4 pb-4 sm:pb-5 rounded-2xl shadow-2xl mx-auto max-w-[280px] sm:max-w-[320px] select-none"
-                style={{
-                  transform: 'rotate(-2deg)',
-                  boxShadow: '0 15px 35px rgba(0,0,0,0.5)',
-                }}
-                whileHover={{ rotate: 0, scale: 1.02 }}
-                transition={{ duration: 0.3 }}
+                className="relative z-10 cursor-default select-none max-w-[310px] sm:max-w-[360px] w-full"
+                initial={{ opacity: 0, scale: 0.7, rotate: -8, y: 30 }}
+                animate={{ opacity: 1, scale: 1, rotate: -3.5, y: 0 }}
+                exit={{ opacity: 0, scale: 0.75, rotate: -8, y: 20 }}
+                transition={{ type: 'spring', damping: 20, stiffness: 280 }}
+                whileHover={{ rotate: 0, scale: 1.03 }}
+                onClick={(e) => e.stopPropagation()}
               >
-                <div className="rounded-xl overflow-hidden aspect-[3/4] bg-neutral-900 shadow-inner">
-                  <img
-                    src={flowerImg}
-                    alt="Kuch yaad aaya"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </motion.div>
-
-              {/* Caption beneath */}
-              <motion.div
-                className="mt-6"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.25, duration: 0.5 }}
-              >
-                <h3
-                  className="text-2xl sm:text-3xl font-serif italic font-bold tracking-wide"
+                {/* Frosted Gold Washi Tape at Top */}
+                <div
+                  className="absolute -top-3 left-1/2 -translate-x-1/2 w-28 sm:w-32 h-6 sm:h-7 z-30 pointer-events-none"
                   style={{
-                    fontFamily: 'var(--font-serif)',
-                    background: 'linear-gradient(135deg, #ffffff 0%, var(--color-pink-light) 50%, var(--color-gold) 100%)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
+                    background: 'rgba(254, 240, 138, 0.65)',
+                    backdropFilter: 'blur(4px)',
+                    border: '1px dashed rgba(201, 169, 110, 0.7)',
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.25)',
+                    transform: 'translateX(-50%) rotate(2deg)',
+                  }}
+                />
+
+                {/* Close Button */}
+                <button
+                  onClick={() => setRevealed(false)}
+                  className="absolute -top-3 -right-3 z-30 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-stone-900/90 hover:bg-stone-900 text-white/90 hover:text-white border border-white/20 shadow-2xl flex items-center justify-center text-sm font-bold transition-all hover:scale-110 cursor-pointer"
+                  style={{
+                    boxShadow: '0 4px 20px rgba(0,0,0,0.6)',
+                  }}
+                  title="Close"
+                >
+                  ✕
+                </button>
+
+                {/* Physical Polaroid Body */}
+                <div
+                  className="bg-[#fcfaf7] p-3.5 sm:p-5 pb-5 sm:pb-6 rounded-2xl"
+                  style={{
+                    boxShadow:
+                      '0 35px 70px -15px rgba(0, 0, 0, 0.95), 0 0 50px rgba(233, 30, 140, 0.3), 0 0 0 1px rgba(255,255,255,0.4)',
                   }}
                 >
-                  "Kuch yaad aaya...!!" 🌸
-                </h3>
+                  {/* Photo Frame */}
+                  <div className="rounded-xl overflow-hidden aspect-[3/4] bg-stone-900 shadow-inner relative">
+                    <img
+                      src={flowerImg}
+                      alt="Kuch yaad aaya"
+                      className="w-full h-full object-cover"
+                    />
+                    <div
+                      className="absolute inset-0 pointer-events-none"
+                      style={{
+                        boxShadow: 'inset 0 0 25px rgba(0,0,0,0.2)',
+                      }}
+                    />
+                  </div>
+
+                  {/* Nostalgic Handwritten Style Caption */}
+                  <div className="mt-4 sm:mt-5 text-center px-2">
+                    <p
+                      className="text-2xl sm:text-3xl font-bold tracking-wide select-none"
+                      style={{
+                        fontFamily: 'Dancing Script, cursive, var(--font-serif)',
+                        color: '#2a1a2e',
+                        textShadow: '0 1px 2px rgba(0,0,0,0.08)',
+                      }}
+                    >
+                      "Kuch yaad aaya...!!" 🌸
+                    </p>
+                    <p
+                      className="text-[10px] sm:text-[11px] tracking-widest uppercase mt-1.5"
+                      style={{
+                        color: '#9e738e',
+                        fontFamily: 'var(--font-sans)',
+                      }}
+                    >
+                      ✦ Tap outside to close ✦
+                    </p>
+                  </div>
+                </div>
               </motion.div>
-            </motion.div>
+            </div>
           )}
         </AnimatePresence>
       </div>
