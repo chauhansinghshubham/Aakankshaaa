@@ -1,54 +1,39 @@
-import { useState, useMemo } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ScrollReveal from './ScrollReveal';
 import Lightbox from './Lightbox';
 import content from '../config/content';
 
-const SIZES = ['small', 'medium', 'large'];
-const SIZE_DIMS = {
-  small: { width: 160, height: 180 },
-  medium: { width: 200, height: 220 },
-  large: { width: 240, height: 260 },
-};
+const ROTATIONS = [-2.5, 2, -1.8, 2.5, -2, 1.8];
 
 function PolaroidCard({ photo, index, onClick }) {
   const [errored, setErrored] = useState(false);
-  const rotation = useMemo(() => (Math.random() - 0.5) * 12, []);
-  const size = SIZES[index % 3];
-  const dims = SIZE_DIMS[size];
+  const rotation = ROTATIONS[index % ROTATIONS.length];
 
   return (
     <motion.div
-      className="polaroid cursor-pointer flex-shrink-0"
+      className="polaroid cursor-pointer w-full max-w-[270px] select-none"
       style={{
-        width: dims.width,
         rotate: rotation,
         transformOrigin: 'center center',
-        userSelect: 'none',
       }}
-      initial={{ opacity: 0, y: 40, rotate: rotation }}
+      initial={{ opacity: 0, y: 35, rotate: rotation }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
-      transition={{ duration: 0.6, delay: (index % 4) * 0.1 }}
+      transition={{ duration: 0.6, delay: (index % 3) * 0.1 }}
       whileHover={{
-        scale: 1.08,
+        scale: 1.06,
         rotate: 0,
-        zIndex: 20,
-        boxShadow: '0 20px 60px rgba(233,30,140,0.3)',
+        zIndex: 30,
+        boxShadow: '0 20px 50px rgba(233,30,140,0.35)',
         transition: { duration: 0.25 },
       }}
       onClick={onClick}
     >
-      <div
-        style={{
-          width: '100%',
-          height: dims.height,
-          overflow: 'hidden',
-        }}
-      >
+      <div className="w-full aspect-[4/5] overflow-hidden bg-black/20 rounded-sm">
         {errored ? (
           <div
-            className="w-full h-full img-placeholder"
+            className="w-full h-full img-placeholder flex items-center justify-center"
             style={{ fontSize: 32 }}
           >
             <span>♥</span>
@@ -57,17 +42,17 @@ function PolaroidCard({ photo, index, onClick }) {
           <img
             src={photo.src}
             alt={photo.caption}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105"
             loading="lazy"
             onError={() => setErrored(true)}
           />
         )}
       </div>
       <p
-        className="text-center mt-1 text-gray-600 leading-tight"
+        className="text-center mt-3 text-gray-700 leading-tight"
         style={{
           fontFamily: 'var(--font-handwriting)',
-          fontSize: '0.85rem',
+          fontSize: '1.05rem',
         }}
       >
         {photo.caption}
@@ -82,20 +67,20 @@ export default function Gallery() {
 
   return (
     <section
-      className="relative min-h-screen py-24 px-4 overflow-hidden"
+      className="relative min-h-screen py-24 px-4 sm:px-6 overflow-hidden flex flex-col items-center justify-center"
       style={{ background: 'var(--bg-base)' }}
     >
       {/* Background */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse at 30% 50%, rgba(124,58,237,0.04) 0%, transparent 60%)',
+          background: 'radial-gradient(ellipse at 50% 50%, rgba(124,58,237,0.05) 0%, transparent 65%)',
         }}
       />
 
-      <div className="relative z-10 max-w-6xl mx-auto">
+      <div className="relative z-10 w-full max-w-5xl mx-auto flex flex-col items-center">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-14 flex flex-col items-center">
           <ScrollReveal>
             <p
               className="text-xs tracking-[0.4em] uppercase mb-4"
@@ -125,8 +110,8 @@ export default function Gallery() {
           </ScrollReveal>
         </div>
 
-        {/* Desktop: scattered layout */}
-        <div className="hidden md:flex flex-wrap justify-center gap-6">
+        {/* Centered Responsive Grid (Mobile 1 col, Tablet 2 cols, Desktop 3 cols) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-10 w-full max-w-4xl justify-items-center items-center">
           {photos.map((photo, i) => (
             <PolaroidCard
               key={i}
@@ -134,24 +119,6 @@ export default function Gallery() {
               index={i}
               onClick={() => setLightboxIndex(i)}
             />
-          ))}
-        </div>
-
-        {/* Mobile: single column */}
-        <div className="flex md:hidden flex-col items-center gap-8">
-          {photos.map((photo, i) => (
-            <motion.div
-              key={i}
-              className="polaroid cursor-pointer"
-              style={{ width: '80vw', maxWidth: 280 }}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              onClick={() => setLightboxIndex(i)}
-            >
-              <MobilePhoto photo={photo} />
-            </motion.div>
           ))}
         </div>
       </div>
@@ -167,32 +134,5 @@ export default function Gallery() {
         )}
       </AnimatePresence>
     </section>
-  );
-}
-
-function MobilePhoto({ photo }) {
-  const [errored, setErrored] = useState(false);
-  return (
-    <>
-      <div style={{ height: 220, overflow: 'hidden' }}>
-        {errored ? (
-          <div className="img-placeholder w-full h-full" style={{ fontSize: 32 }}>♥</div>
-        ) : (
-          <img
-            src={photo.src}
-            alt={photo.caption}
-            className="w-full h-full object-cover"
-            loading="lazy"
-            onError={() => setErrored(true)}
-          />
-        )}
-      </div>
-      <p
-        className="text-center mt-2 text-gray-600"
-        style={{ fontFamily: 'var(--font-handwriting)', fontSize: '0.9rem' }}
-      >
-        {photo.caption}
-      </p>
-    </>
   );
 }

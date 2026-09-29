@@ -64,7 +64,7 @@ function NewsModal({ article, onClose }) {
 function NewsCard({ item, index, onClick }) {
   return (
     <motion.div
-      className="newspaper-card rounded-lg p-5 cursor-pointer"
+      className="newspaper-card rounded-lg p-5 cursor-pointer w-full h-full flex flex-col justify-between"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
@@ -76,44 +76,46 @@ function NewsCard({ item, index, onClick }) {
       }}
       onClick={onClick}
     >
-      {/* Header */}
-      <div
-        className="flex items-center gap-2 mb-3 pb-3"
-        style={{ borderBottom: '2px solid #9a8560' }}
-      >
-        <span
-          className="text-xs font-bold tracking-widest uppercase px-2 py-0.5 rounded"
-          style={{ background: '#dc2626', color: 'white', fontSize: '0.6rem' }}
+      <div>
+        {/* Header */}
+        <div
+          className="flex items-center gap-2 mb-3 pb-3"
+          style={{ borderBottom: '2px solid #9a8560' }}
         >
-          BREAKING
-        </span>
-        <span className="text-xs text-gray-500" style={{ fontFamily: 'Times New Roman, serif' }}>
-          The Daily Aakanksha
-        </span>
+          <span
+            className="text-xs font-bold tracking-widest uppercase px-2 py-0.5 rounded"
+            style={{ background: '#dc2626', color: 'white', fontSize: '0.6rem' }}
+          >
+            BREAKING
+          </span>
+          <span className="text-xs text-gray-500" style={{ fontFamily: 'Times New Roman, serif' }}>
+            The Daily Aakanksha
+          </span>
+        </div>
+
+        {/* Headline */}
+        <h3
+          className="font-bold leading-tight mb-3"
+          style={{
+            fontFamily: 'Times New Roman, serif',
+            color: '#1a1a1a',
+            fontSize: '1rem',
+          }}
+        >
+          {item.headline}
+        </h3>
+
+        {/* Teaser */}
+        <p
+          className="text-xs leading-relaxed line-clamp-3 mb-3"
+          style={{ color: '#4a4a4a', fontFamily: 'Times New Roman, serif' }}
+        >
+          {item.article.slice(0, 80)}...
+        </p>
       </div>
 
-      {/* Headline */}
-      <h3
-        className="font-bold leading-tight mb-3"
-        style={{
-          fontFamily: 'Times New Roman, serif',
-          color: '#1a1a1a',
-          fontSize: '1rem',
-        }}
-      >
-        {item.headline}
-      </h3>
-
-      {/* Teaser */}
       <p
-        className="text-xs leading-relaxed line-clamp-3 mb-3"
-        style={{ color: '#4a4a4a', fontFamily: 'Times New Roman, serif' }}
-      >
-        {item.article.slice(0, 80)}...
-      </p>
-
-      <p
-        className="text-xs font-bold"
+        className="text-xs font-bold mt-2"
         style={{ color: '#9a8560', fontFamily: 'Times New Roman, serif' }}
       >
         Click to read full story →
@@ -131,13 +133,13 @@ export default function BreakingNews() {
 
   return (
     <section
-      className="relative min-h-screen py-24 overflow-hidden"
+      className="relative min-h-screen py-24 overflow-hidden flex flex-col items-center justify-center"
       style={{ background: 'var(--bg-base)' }}
     >
-      <div className="relative z-10">
+      <div className="relative z-10 w-full flex flex-col items-center">
         {/* Ticker tape */}
         <div
-          className="overflow-hidden py-2 mb-0"
+          className="w-full overflow-hidden py-2.5 mb-0"
           style={{
             background: '#dc2626',
             borderTop: '2px solid #991b1b',
@@ -149,29 +151,29 @@ export default function BreakingNews() {
           </div>
         </div>
 
-        <div className="max-w-6xl mx-auto px-6 pt-12">
+        <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 pt-12 flex flex-col items-center">
           {/* Masthead */}
-          <div className="text-center mb-12">
-            <ScrollReveal>
+          <div className="text-center mb-12 flex flex-col items-center w-full">
+            <ScrollReveal className="flex justify-center w-full">
               <div
-                className="inline-block px-8 py-4 rounded-sm"
+                className="inline-block px-4 sm:px-8 py-3 sm:py-4 rounded-sm max-w-[92vw] text-center"
                 style={{
                   background: '#f5f0e8',
                   border: '3px double #9a8560',
                 }}
               >
-                <p className="text-xs tracking-[0.4em] uppercase text-gray-500 mb-1" style={{ fontFamily: 'Times New Roman, serif' }}>
+                <p className="text-[10px] sm:text-xs tracking-[0.3em] sm:tracking-[0.4em] uppercase text-gray-500 mb-1" style={{ fontFamily: 'Times New Roman, serif' }}>
                   Est. 2026  ·  All the news about her
                 </p>
                 <h2
-                  className="text-4xl md:text-6xl font-black"
+                  className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight"
                   style={{ fontFamily: 'Times New Roman, serif', color: '#1a1a1a' }}
                 >
                   THE DAILY AAKANKSHA
                 </h2>
-                <div className="flex items-center gap-4 justify-center mt-2">
+                <div className="flex items-center gap-2 sm:gap-4 justify-center mt-2">
                   <div className="h-px flex-1 bg-gray-400" />
-                  <p className="text-xs text-gray-500" style={{ fontFamily: 'Times New Roman, serif' }}>
+                  <p className="text-[10px] sm:text-xs text-gray-500 whitespace-nowrap" style={{ fontFamily: 'Times New Roman, serif' }}>
                     Vol. IV, No. 1  ·  Breaking News Edition
                   </p>
                   <div className="h-px flex-1 bg-gray-400" />
@@ -181,14 +183,15 @@ export default function BreakingNews() {
           </div>
 
           {/* Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-5xl justify-items-center items-stretch">
             {headlines.map((item, i) => (
-              <NewsCard
-                key={i}
-                item={item}
-                index={i}
-                onClick={() => setActiveArticle(item)}
-              />
+              <div key={i} className="w-full max-w-md mx-auto">
+                <NewsCard
+                  item={item}
+                  index={i}
+                  onClick={() => setActiveArticle(item)}
+                />
+              </div>
             ))}
           </div>
         </div>

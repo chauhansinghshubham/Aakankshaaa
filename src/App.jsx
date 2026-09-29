@@ -77,7 +77,7 @@ export default function App() {
             <ChapterDivider whisper="Beyond the laughter, the quiet truths I need to tell you..." icon="💌" />
             <Apology />
             <ChapterDivider whisper="What words couldn't say out loud, written with care..." icon="✒️" />
-            <Letter />
+            <Letter hasReachedLastPage={hasReachedLastPage} />
             <ChapterDivider whisper="A little smile for you before we reach the end..." icon="🎁" />
             <Surprise />
             <ChapterDivider whisper="Under the fairy lights, just you and my honest heart..." icon="🤍" />

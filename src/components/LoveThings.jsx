@@ -17,10 +17,10 @@ function FlipCard({ item, index, isLast }) {
 
   return (
     <motion.div
-      className={`cursor-pointer ${
+      className={`cursor-pointer w-full ${
         isLast
-          ? 'col-span-2 md:col-span-1 w-full max-w-[calc(50%-0.5rem)] md:max-w-none mx-auto justify-self-center'
-          : ''
+          ? 'col-span-2 md:col-span-1 max-w-[180px] md:max-w-none mx-auto justify-self-center'
+          : 'max-w-[220px] md:max-w-none mx-auto'
       }`}
       style={{ perspective: 1000, height: 180 }}
       initial={{ opacity: 0, y: 40 }}
@@ -85,19 +85,19 @@ export default function LoveThings() {
 
   return (
     <section
-      className="relative min-h-screen py-24 px-6 overflow-hidden"
+      className="relative min-h-screen py-24 px-4 sm:px-6 overflow-hidden flex flex-col items-center justify-center"
       style={{ background: 'var(--bg-base)' }}
     >
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse at 50% 0%, rgba(233,30,140,0.05) 0%, transparent 60%)',
+          background: 'radial-gradient(ellipse at 50% 50%, rgba(233,30,140,0.05) 0%, transparent 65%)',
         }}
       />
 
-      <div className="relative z-10 max-w-6xl mx-auto">
+      <div className="relative z-10 w-full max-w-6xl mx-auto flex flex-col items-center">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 flex flex-col items-center">
           <ScrollReveal>
             <p
               className="text-xs tracking-[0.4em] uppercase mb-4"
@@ -108,7 +108,7 @@ export default function LoveThings() {
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
             <h2
-              className="text-3xl md:text-5xl font-serif font-bold"
+              className="text-3xl md:text-5xl font-serif font-bold text-center"
               style={{
                 fontFamily: 'var(--font-serif)',
                 background: 'linear-gradient(135deg, #fff 0%, var(--color-pink-light) 100%)',
@@ -122,14 +122,14 @@ export default function LoveThings() {
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
-            <p className="mt-4 text-sm" style={{ color: 'var(--color-muted)' }}>
+            <p className="mt-4 text-sm text-center" style={{ color: 'var(--color-muted)' }}>
               Click each card to read the message inside
             </p>
           </ScrollReveal>
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3.5 sm:gap-4 md:gap-5 w-full max-w-5xl justify-items-center items-center">
           {things.map((item, i) => (
             <FlipCard
               key={i}
