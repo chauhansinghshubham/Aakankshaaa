@@ -17,12 +17,12 @@ function FlipCard({ item, index, isLast }) {
 
   return (
     <motion.div
-      className={`cursor-pointer w-full ${
+      className={`cursor-pointer ${
         isLast
-          ? 'col-span-2 md:col-span-1 max-w-[180px] md:max-w-none mx-auto justify-self-center'
-          : 'max-w-[220px] md:max-w-none mx-auto'
-      }`}
-      style={{ perspective: 1000, height: 180 }}
+          ? 'w-[calc(100%-1rem)] max-w-[200px] sm:w-[220px]'
+          : 'w-[calc(50%-0.5rem)] sm:w-[220px]'
+      } h-[180px] flex-shrink-0`}
+      style={{ perspective: 1000 }}
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
@@ -128,14 +128,14 @@ export default function LoveThings() {
           </ScrollReveal>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3.5 sm:gap-4 md:gap-5 w-full max-w-5xl justify-items-center items-center">
+        {/* Centered Flex Grid */}
+        <div className="flex flex-wrap justify-center gap-3.5 sm:gap-4 md:gap-5 w-full max-w-5xl mx-auto">
           {things.map((item, i) => (
             <FlipCard
               key={i}
               item={item}
               index={i}
-              isLast={i === things.length - 1}
+              isLast={i === things.length - 1 && things.length % 2 !== 0}
             />
           ))}
         </div>

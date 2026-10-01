@@ -64,23 +64,23 @@ export default function App() {
           {/* Pages */}
           <main style={{ position: 'relative', zIndex: 2 }}>
             <HerSection />
-            <ChapterDivider whisper="A collection of the girl who lights up every room..." icon="🌸" />
+            <ChapterDivider whisper="Yeh kuch photos hain jo mujhe sabse zyada pyaari lagti hain..." icon="🌸" />
             <Gallery />
             <ChapterDivider whisper="Every picture has a memory, and this is how it all began..." icon="📖" />
             <OurStory />
-            <ChapterDivider whisper="Through all those memories, I fell for every piece of you..." icon="💖" />
+            <ChapterDivider whisper="Tumhari woh choti aadaatein jinpe main secretly fida hoon..." icon="💖" />
             <LoveThings />
             <ChapterDivider whisper="Musafir main bhatka, tu mera basera..." icon="✨" />
             <HoKaunTum />
-            <ChapterDivider whisper="A little chaos, a lot of drama, and some headlines..." icon="🗞️" />
+            <ChapterDivider whisper="Thoda drama, thodi bakwaas, aur humare headlines..." icon="🗞️" />
             <BreakingNews />
-            <ChapterDivider whisper="Beyond the laughter, the quiet truths I need to tell you..." icon="💌" />
+            <ChapterDivider whisper="Mazaak se hatt ke, kuch sach jo bolna zaroori tha..." icon="💌" />
             <Apology />
-            <ChapterDivider whisper="What words couldn't say out loud, written with care..." icon="✒️" />
+            <ChapterDivider whisper="Jo baatein main samne se theek se keh nahi pata..." icon="✒️" />
             <Letter hasReachedLastPage={hasReachedLastPage} />
-            <ChapterDivider whisper="A little smile for you before we reach the end..." icon="🎁" />
+            <ChapterDivider whisper="End tak aane se pehle, bas ek choti si smile tumhare liye..." icon="🎁" />
             <Surprise />
-            <ChapterDivider whisper="Under the fairy lights, just you and my honest heart..." icon="🤍" />
+            <ChapterDivider whisper="Bas tum, main, aur meri bilkul sachhi baatein..." icon="🤍" />
             <FinalPage
               onReplay={handleReplay}
               onReachedLastPage={() => setHasReachedLastPage(true)}

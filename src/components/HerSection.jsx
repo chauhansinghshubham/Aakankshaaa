@@ -4,12 +4,12 @@ import ScrollReveal from './ScrollReveal';
 import content from '../config/content';
 
 const TAGS = [
-  { text: 'Best Smile 🏆', emoji: '✨', color: 'rgba(233,30,140,0.15)' },
-  { text: 'Professional Overthinker 🥇', emoji: '🌀', color: 'rgba(124,58,237,0.15)' },
-  { text: 'Food Department Head 🍜', emoji: '🍟', color: 'rgba(201,169,110,0.12)' },
-  { text: 'Most Dramatic Reaction 🎭', emoji: '🎬', color: 'rgba(233,30,140,0.12)' },
+  { text: 'Woh Pyaari Smile ✨', emoji: '✨', color: 'rgba(233,30,140,0.15)' },
+  { text: '24/7 Overthinking 🌀', emoji: '🌀', color: 'rgba(124,58,237,0.15)' },
+  { text: 'Food Cravings Head 🍟', emoji: '🍟', color: 'rgba(201,169,110,0.12)' },
+  { text: 'Full-on Drama Queen 🎭', emoji: '🎬', color: 'rgba(233,30,140,0.12)' },
   { text: 'Cutest Menace 🌸', emoji: '💅', color: 'rgba(124,58,237,0.12)' },
-  { text: 'Main Character Energy 👑', emoji: '💎', color: 'rgba(201,169,110,0.15)' },
+  { text: 'Always Main Character 👑', emoji: '💎', color: 'rgba(201,169,110,0.15)' },
 ];
 
 function ProfilePhoto() {
@@ -120,10 +120,10 @@ export default function HerSection() {
           className="text-sm md:text-base text-center mb-10"
           style={{ color: 'var(--color-muted)', fontFamily: 'var(--font-sans)', maxWidth: 480 }}
         >
-          The only person whose absence made this entire week feel quiet.
+          Ek lauti aisi insaan jiske na hone se poora hafta ajeeb sa khali laga.
           <br />
           <span style={{ color: 'var(--color-gold)', fontSize: '0.8rem', letterSpacing: '0.15em' }} className="uppercase mt-2 inline-block font-medium">
-            A website built with real effort · Just for you
+            No templates, no shortcuts · Bas tumhare liye banaya
           </span>
         </p>
       </ScrollReveal>

@@ -538,21 +538,21 @@ export default function Surprise() {
                   <div className="flex items-start gap-2.5">
                     <span className="text-base mt-0.5">🥇</span>
                     <p className="text-xs sm:text-sm text-white/90 leading-relaxed font-sans">
-                      <strong className="text-amber-300">Automatic Victory:</strong> She automatically wins any debate or disagreement in the future — no conditions applied, zero counter-arguments allowed.
+                      <strong className="text-amber-300">Automatic Victory:</strong> Aage se kisi bhi behes ya disagreement me tum automatically jeet jaogi — koi conditions nahi, mujhe argue karna allowed nahi.
                     </p>
                   </div>
 
                   <div className="flex items-start gap-2.5">
                     <span className="text-base mt-0.5">⏳</span>
                     <p className="text-xs sm:text-sm text-white/90 leading-relaxed font-sans">
-                      <strong className="text-amber-300">Lifetime Validity:</strong> Valid across all mood swings, dramatic moments, and overthinking spirals forever.
+                      <strong className="text-amber-300">Lifetime Validity:</strong> Tumhare har mood swing, dramatic reaction, aur overthinking ke liye valid hai forever.
                     </p>
                   </div>
 
                   <div className="flex items-start gap-2.5">
                     <span className="text-base mt-0.5">🍫</span>
                     <p className="text-xs sm:text-sm text-white/90 leading-relaxed font-sans">
-                      <strong className="text-amber-300">Penalty Clause:</strong> Any attempt by Shubham to argue back will result in an immediate penalty of favorite snacks & chocolates.
+                      <strong className="text-amber-300">Penalty Clause:</strong> Agar maine argue karne ki koshish bhi ki, toh penalty me turant chocolates aur favourite food khilana padega.
                     </p>
                   </div>
                 </div>
@@ -589,7 +589,7 @@ export default function Surprise() {
                       </motion.div>
 
                       <p className="text-xs text-amber-200/70 italic font-sans mt-1">
-                        Take a screenshot for proof... you can use this against me anytime! 😉
+                        Screenshot leke rakh lo... aage kabhi bhi mere khilaaf use kar sakti ho! 😉
                       </p>
                     </div>
                   )}

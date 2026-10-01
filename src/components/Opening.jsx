@@ -38,7 +38,7 @@ export default function Opening({ onEnter }) {
 
   const handleUnlockSuccess = () => {
     setIsUnlocked(true);
-    setSuccessMsg("I knew you'd remember... ❤️");
+    setSuccessMsg("Pata tha mujhe, bhooli nahi ho tum... ❤️");
     setIntensified(true);
     setTimeout(() => {
       onEnter();
@@ -168,9 +168,9 @@ export default function Opening({ onEnter }) {
               className="text-base sm:text-lg text-center leading-relaxed"
               style={{ color: 'var(--color-muted)', fontFamily: 'var(--font-sans)', maxWidth: 480 }}
             >
-              A week of silence felt like a year.
+              Pichla ek hafta itna ajeeb aur khali laga na...
               <br />
-              No pressure. No demands. Just something I stayed up building for you.
+              Koi pressure nahi hai. Bas thoda time nikaal ke yeh dekhna jo maine tumhare liye banaya hai.
             </motion.p>
           )}
         </AnimatePresence>
@@ -301,7 +301,7 @@ export default function Opening({ onEnter }) {
               </h2>
 
               <p className="text-xs sm:text-sm text-pink-200/70 font-sans mb-5">
-                Enter that special date to open our world...
+                Yaad hai na woh din? Enter that special date to open ❤️
               </p>
 
               {/* Form */}

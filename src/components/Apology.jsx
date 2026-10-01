@@ -144,7 +144,7 @@ export default function Apology() {
                     className="font-serif italic font-bold text-2xl sm:text-3xl text-white mb-2"
                     style={{ fontFamily: 'var(--font-serif)' }}
                   >
-                    "I Know Things Haven't Been Okay..."
+                    "Pata Hai Mujhe Sab Theek Nahi Hai..."
                   </h3>
 
                   {/* Glowing Open Button Callout */}
@@ -250,7 +250,7 @@ export default function Apology() {
                 {/* Subtle Divider & Sign-off */}
                 <div className="pt-4 border-t border-white/10 flex flex-col items-center gap-1">
                   <p className="text-xs text-white/40 italic font-sans">
-                    That's it. That's all I wanted to say.
+                    Bas itna he kehna tha... baaki sab tumhare upar hai.
                   </p>
                   <p className="text-xs font-serif italic text-pink-200 mt-1">
                     — Shubham

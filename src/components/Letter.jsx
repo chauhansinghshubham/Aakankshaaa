@@ -165,7 +165,7 @@ export default function Letter({ hasReachedLastPage = false }) {
               {!isFinished ? (
                 <span className="text-amber-200/80 flex items-center gap-2">
                   <span className="inline-block animate-pulse">📜</span>
-                  <span>Uncrunching & smoothing paper...</span>
+                  <span>Likh raha hoon... uncrunching paper...</span>
                   <span className="font-mono text-amber-300 font-bold">
                     {Math.round(progress * 100)}%
                   </span>
@@ -177,7 +177,7 @@ export default function Letter({ hasReachedLastPage = false }) {
                   className="text-amber-300 flex items-center gap-1.5 font-medium"
                 >
                   <span>✨</span>
-                  <span>Completely smoothed & written with care</span>
+                  <span>Poora theek ho gaya, bas tumhare liye</span>
                   <span>🤍</span>
                 </motion.span>
               )}
@@ -391,7 +391,7 @@ export default function Letter({ hasReachedLastPage = false }) {
                   className="text-xs uppercase tracking-[0.2em] font-mono transition-colors duration-500"
                   style={{ color: isFinished ? '#8f6e3c' : '#573315' }}
                 >
-                  {isFinished ? 'Smooth & Restored' : 'Smoothing crunched paper...'}
+                  {isFinished ? 'Dil se likha hai' : 'Likh raha hoon...'}
                 </p>
                 <p
                   className="text-sm font-serif italic transition-colors duration-500"
@@ -462,7 +462,7 @@ export default function Letter({ hasReachedLastPage = false }) {
                 className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-[11px] font-sans tracking-wider uppercase text-amber-900/80 bg-amber-900/10 hover:bg-amber-900/20 border border-amber-900/25 transition-all hover:scale-105 cursor-pointer"
               >
                 <span>⚡</span>
-                <span>Smooth & show entire letter</span>
+                <span>Ek baar me poora letter padho</span>
               </button>
             </div>
           )}
