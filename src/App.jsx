@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
 
 import Opening from './components/Opening';
@@ -16,17 +16,29 @@ import MusicPlayer from './components/MusicPlayer';
 import Cursor from './components/Cursor';
 import ParticleSystem from './components/ParticleSystem';
 import ChapterDivider from './components/ChapterDivider';
+import { trackSiteOpen, trackSiteEntered, trackReachedFinalPage } from './utils/tracker';
 
 export default function App() {
   const [hasEntered, setHasEntered] = useState(false);
   const [hasReachedLastPage, setHasReachedLastPage] = useState(false);
 
+  // Initialize tracker and log initial site visit
+  useEffect(() => {
+    trackSiteOpen();
+  }, []);
+
   const handleEnter = useCallback(() => {
     setHasEntered(true);
+    trackSiteEntered();
     // smooth scroll to top of main content
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }, 100);
+  }, []);
+
+  const handleReachedLastPage = useCallback(() => {
+    setHasReachedLastPage(true);
+    trackReachedFinalPage();
   }, []);
 
   const handleReplay = useCallback(() => {
@@ -83,7 +95,7 @@ export default function App() {
             <ChapterDivider whisper="Bas tum, main, aur meri bilkul sachhi baatein..." icon="🤍" />
             <FinalPage
               onReplay={handleReplay}
-              onReachedLastPage={() => setHasReachedLastPage(true)}
+              onReachedLastPage={handleReachedLastPage}
             />
           </main>
         </>

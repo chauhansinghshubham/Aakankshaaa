@@ -2,6 +2,7 @@ import { useRef, useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Instagram, MessageCircle, RotateCcw } from 'lucide-react';
 import content from '../config/content';
+import { trackQuestionAnswer } from '../utils/tracker';
 
 function FairyLightEmbers() {
   const canvasRef = useRef(null);
@@ -242,11 +243,9 @@ function ReconnectInteraction({ contact }) {
 
   const sentRef = useRef(null);
 
-  // Silent instant notification to Shubham when Aakanksha clicks either option
-  const notifyResponse = (option) => {
+  const handleSelectOption = (option) => {
+    setResponse(option);
     const choiceText = option === 'little' ? 'Thoda sa... 🥺' : 'Haan bohot 😤';
-
-    // Store in localStorage
     try {
       localStorage.setItem('aakanksha_gussa_choice', option);
       localStorage.setItem('aakanksha_gussa_text', choiceText);
@@ -254,42 +253,7 @@ function ReconnectInteraction({ contact }) {
     } catch {
       // ignore
     }
-
-    if (sentRef.current === option) return;
-    sentRef.current = option;
-
-    // Silent background dispatch to FormSubmit -> delivers to singhshubham292005@gmail.com
-    try {
-      fetch('https://formsubmit.co/ajax/singhshubham292005@gmail.com', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify({
-          _subject: `💌 Aakanksha responded: "${choiceText}"`,
-          Question: 'Abhi bhi gussa ho mujhse?',
-          Answer: choiceText,
-          Time: new Date().toLocaleString('en-IN', {
-            timeZone: 'Asia/Kolkata',
-            dateStyle: 'full',
-            timeStyle: 'medium',
-          }),
-          Website: 'aakankshaaa.in',
-          _template: 'table',
-          _captcha: 'false',
-        }),
-      }).catch(() => {
-        // Silently swallow any network or adblock errors so Aakanksha never notices
-      });
-    } catch {
-      // Silently swallow
-    }
-  };
-
-  const handleSelectOption = (option) => {
-    setResponse(option);
-    notifyResponse(option);
+    trackQuestionAnswer(option);
   };
 
   const littlePrefill = 'Thoda sa gussa hoon bas... 🥺 par website bohot pyaari thi 🤍';
@@ -596,7 +560,14 @@ export default function FinalPage({ onReplay, onReachedLastPage }) {
           {/* ── OPTION 2: FLOATING SKY LANTERN ── */}
           <FloatingSkyLantern
             isReleased={isLanternReleased}
-            onRelease={() => setIsLanternReleased(true)}
+            onRelease={() => {
+              setIsLanternReleased(true);
+              try {
+                localStorage.setItem('aakanksha_lantern_released', 'true');
+              } catch {
+                // ignore
+              }
+            }}
           />
 
           {/* ── OPTION 1: GENTLE RECONNECTION ── */}
