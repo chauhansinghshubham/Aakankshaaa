@@ -1,7 +1,7 @@
 const content = {
   name: 'Aakanksha',
-  music: '/music/jaavedaan_hai.mp3',
-  musicTitle: 'Jaavedaan Hai - KK (1920)',
+  music: '/music/samjhawan.mp3',
+  musicTitle: 'Samjhawan - Arijit Singh, Shreya Ghoshal',
 
   photos: {
     hero: '/photos/hero.jpg',

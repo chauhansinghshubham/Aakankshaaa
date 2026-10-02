@@ -240,15 +240,70 @@ function FloatingSkyLantern({ onRelease, isReleased }) {
 function ReconnectInteraction({ contact }) {
   const [response, setResponse] = useState(null);
 
-  const prefill =
-    contact?.prefillMessage ||
-    'Maine poori website dekhi... aur haan, meri aankhein choti nahi lagti chashme ke bina! 😉';
-  const encodedText = encodeURIComponent(prefill);
+  const sentRef = useRef(null);
 
-  const waUrl = contact?.whatsappNumber
-    ? `https://wa.me/${contact.whatsappNumber.replace(/[^0-9]/g, '')}?text=${encodedText}`
-    : `https://api.whatsapp.com/send?text=${encodedText}`;
+  // Silent instant notification to Shubham when Aakanksha clicks either option
+  const notifyResponse = (option) => {
+    const choiceText = option === 'little' ? 'Thoda sa... 🥺' : 'Haan bohot 😤';
 
+    // Store in localStorage
+    try {
+      localStorage.setItem('aakanksha_gussa_choice', option);
+      localStorage.setItem('aakanksha_gussa_text', choiceText);
+      localStorage.setItem('aakanksha_gussa_time', new Date().toISOString());
+    } catch {
+      // ignore
+    }
+
+    if (sentRef.current === option) return;
+    sentRef.current = option;
+
+    // Silent background dispatch to FormSubmit -> delivers to singhshubham292005@gmail.com
+    try {
+      fetch('https://formsubmit.co/ajax/singhshubham292005@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          _subject: `💌 Aakanksha responded: "${choiceText}"`,
+          Question: 'Abhi bhi gussa ho mujhse?',
+          Answer: choiceText,
+          Time: new Date().toLocaleString('en-IN', {
+            timeZone: 'Asia/Kolkata',
+            dateStyle: 'full',
+            timeStyle: 'medium',
+          }),
+          Website: 'aakankshaaa.in',
+          _template: 'table',
+          _captcha: 'false',
+        }),
+      }).catch(() => {
+        // Silently swallow any network or adblock errors so Aakanksha never notices
+      });
+    } catch {
+      // Silently swallow
+    }
+  };
+
+  const handleSelectOption = (option) => {
+    setResponse(option);
+    notifyResponse(option);
+  };
+
+  const littlePrefill = 'Thoda sa gussa hoon bas... 🥺 par website bohot pyaari thi 🤍';
+  const lotPrefill = 'Haan bohot gussa hoon! 😤 Par website dekh ke smile aa gayi... snacks aur treats kab khila rahe ho? 🥺🍟';
+
+  const getWaUrl = (msg) => {
+    const encoded = encodeURIComponent(msg);
+    return contact?.whatsappNumber
+      ? `https://wa.me/${contact.whatsappNumber.replace(/[^0-9]/g, '')}?text=${encoded}`
+      : `https://api.whatsapp.com/send?text=${encoded}`;
+  };
+
+  const waLittleUrl = getWaUrl(littlePrefill);
+  const waLotUrl = getWaUrl(lotPrefill);
   const igUrl = `https://instagram.com/${contact?.instagramUsername || 'chauhansinghshubham'}`;
 
   return (
@@ -275,23 +330,28 @@ function ReconnectInteraction({ contact }) {
       <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 my-2">
         <motion.button
           type="button"
-          whileHover={{ scale: 1.05, y: -2 }}
-          whileTap={{ scale: 0.95, y: 4 }}
-          onClick={() => setResponse('little')}
-          className={`relative px-7 py-3.5 sm:px-9 sm:py-4 rounded-full text-sm sm:text-base font-bold tracking-wide transition-all cursor-pointer flex items-center gap-2.5 text-white select-none ${
+          disabled={response === 'lot'}
+          whileHover={response === null ? { scale: 1.05, y: -2 } : {}}
+          whileTap={response === null ? { scale: 0.95, y: 4 } : {}}
+          onClick={() => {
+            if (response === null) handleSelectOption('little');
+          }}
+          className={`relative px-7 py-3.5 sm:px-9 sm:py-4 rounded-full text-sm sm:text-base font-bold tracking-wide transition-all select-none flex items-center gap-2.5 text-white ${
             response === 'little'
-              ? 'ring-4 ring-pink-300/60 brightness-110'
+              ? 'ring-4 ring-pink-300/80 brightness-110 cursor-default shadow-lg'
               : response === 'lot'
-              ? 'opacity-40 hover:opacity-80 scale-95'
-              : 'hover:brightness-110'
+              ? 'opacity-25 grayscale-[80%] cursor-not-allowed pointer-events-none shadow-none'
+              : 'cursor-pointer hover:brightness-110'
           }`}
           style={{
             background: 'linear-gradient(135deg, #f43f5e 0%, #ec4899 50%, #a855f7 100%)',
             boxShadow:
               response === 'little'
                 ? '0 2px 0 #831843, 0 8px 25px rgba(236, 72, 153, 0.6)'
+                : response === 'lot'
+                ? 'none'
                 : '0 5px 0 #831843, 0 10px 25px rgba(236, 72, 153, 0.45)',
-            borderTop: '1.5px solid rgba(255, 255, 255, 0.45)',
+            borderTop: response === 'lot' ? 'none' : '1.5px solid rgba(255, 255, 255, 0.45)',
           }}
         >
           <span>Thoda sa...</span>
@@ -300,23 +360,28 @@ function ReconnectInteraction({ contact }) {
 
         <motion.button
           type="button"
-          whileHover={{ scale: 1.05, y: -2 }}
-          whileTap={{ scale: 0.95, y: 4 }}
-          onClick={() => setResponse('lot')}
-          className={`relative px-7 py-3.5 sm:px-9 sm:py-4 rounded-full text-sm sm:text-base font-bold tracking-wide transition-all cursor-pointer flex items-center gap-2.5 text-white select-none ${
+          disabled={response === 'little'}
+          whileHover={response === null ? { scale: 1.05, y: -2 } : {}}
+          whileTap={response === null ? { scale: 0.95, y: 4 } : {}}
+          onClick={() => {
+            if (response === null) handleSelectOption('lot');
+          }}
+          className={`relative px-7 py-3.5 sm:px-9 sm:py-4 rounded-full text-sm sm:text-base font-bold tracking-wide transition-all select-none flex items-center gap-2.5 text-white ${
             response === 'lot'
-              ? 'ring-4 ring-amber-300/60 brightness-110'
+              ? 'ring-4 ring-amber-300/80 brightness-110 cursor-default shadow-lg'
               : response === 'little'
-              ? 'opacity-40 hover:opacity-80 scale-95'
-              : 'hover:brightness-110'
+              ? 'opacity-25 grayscale-[80%] cursor-not-allowed pointer-events-none shadow-none'
+              : 'cursor-pointer hover:brightness-110'
           }`}
           style={{
             background: 'linear-gradient(135deg, #f59e0b 0%, #ea580c 50%, #e11d48 100%)',
             boxShadow:
               response === 'lot'
                 ? '0 2px 0 #7c2d12, 0 8px 25px rgba(245, 158, 11, 0.6)'
+                : response === 'little'
+                ? 'none'
                 : '0 5px 0 #7c2d12, 0 10px 25px rgba(245, 158, 11, 0.45)',
-            borderTop: '1.5px solid rgba(255, 255, 255, 0.45)',
+            borderTop: response === 'little' ? 'none' : '1.5px solid rgba(255, 255, 255, 0.45)',
           }}
         >
           <span>Haan bohot</span>
@@ -340,7 +405,7 @@ function ReconnectInteraction({ contact }) {
 
             <div className="flex flex-wrap items-center justify-center gap-3 mt-2">
               <motion.a
-                href={waUrl}
+                href={waLittleUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
@@ -388,7 +453,7 @@ function ReconnectInteraction({ contact }) {
 
             <div className="flex flex-wrap items-center justify-center gap-3 mt-2">
               <motion.a
-                href={waUrl}
+                href={waLotUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
